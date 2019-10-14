@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BillSaleDetails"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="BILL_SALE_DETAILS"
+  AliasName="BillSaleDetails"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="com.abdo.adf.storeshop.model.eo.BillSaleDetailsImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BILL_SALE_DETAILS"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.BillSaleDetails.Id_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Price"
+    ColumnName="PRICE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BILL_SALE_DETAILS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.BillSaleDetails.Price_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Discount"
+    ColumnName="DISCOUNT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BILL_SALE_DETAILS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.BillSaleDetails.Discount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BILL_SALE_DETAILS"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="BILL_SALE_DETAILS"/>
+  <Attribute
+    Name="LastUpdatedDate"
+    ColumnName="LAST_UPDATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="BILL_SALE_DETAILS"/>
+  <Attribute
+    Name="LastUpdatedBy"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BILL_SALE_DETAILS"/>
+  <Attribute
+    Name="BillSaleId"
+    IsUnique="true"
+    IsNotNull="true"
+    ColumnName="BILL_SALE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BILL_SALE_DETAILS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.BillSaleDetails.BillSaleId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Product"
+    IsUnique="true"
+    ColumnName="PRODUCT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BILL_SALE_DETAILS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.BillSaleDetails.Product_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Amount"
+    ColumnName="AMOUNT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BILL_SALE_DETAILS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.BillSaleDetails.Amount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ProductCategory"
+    ColumnName="PRODUCT_CATEGORY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="BILL_SALE_DETAILS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.BillSaleDetails.ProductCategory_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="BillSale"
+    Association="com.abdo.adf.storeshop.model.eo.BillSaleDetailsParentAssoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.BillSaleDetailsParentAssoc.BillSale"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.BillSaleDetailsParentAssoc.BillSaleDetails"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="PurchaseBillDetails"
+    Association="com.abdo.adf.storeshop.model.eo.BillSaleDetailsFk1Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.BillSaleDetailsFk1Assoc.PurchaseBillDetails"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.BillSaleDetailsFk1Assoc.BillSaleDetails"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SysUser"
+    Association="com.abdo.adf.storeshop.model.eo.BillSaleDetailsR04Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.BillSaleDetailsR04Assoc.SysUser"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.BillSaleDetailsR04Assoc.BillSaleDetails"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SysUser1"
+    Association="com.abdo.adf.storeshop.model.eo.BillSaleDetailsR03Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.BillSaleDetailsR03Assoc.SysUser1"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.BillSaleDetailsR03Assoc.BillSaleDetails1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ProductsCategory"
+    Association="com.abdo.adf.storeshop.model.eo.BillSaleDetailsFk2Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.BillSaleDetailsFk2Assoc.ProductsCategory"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.BillSaleDetailsFk2Assoc.BillSaleDetails"
+    Type="com.abdo.adf.storeshop.model.eo.ProductsCategoryImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="BillSaleDetailsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="BILL_SALE_DETAILS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.BillSaleDetails.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BillSaleDetailsUk1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BILL_SALE_DETAILS_UK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.BillSaleDetails.BillSaleId"/>
+      <Item Value="com.abdo.adf.storeshop.model.eo.BillSaleDetails.Product"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BillSaleDetailsFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRODUCTS_TYPE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BILL_SALE_DETAILS_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.BillSaleDetails.Product"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BillSaleDetailsFk2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRODUCTS_CATEGORY_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BILL_SALE_DETAILS_FK2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.BillSaleDetails.ProductCategory"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BillSaleDetailsParent">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="BILL_SALE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BILL_SALE_DETAILS_PARENT"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.BillSaleDetails.BillSaleId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BillSaleDetailsR03">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_USER_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BILL_SALE_DETAILS_R03"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.BillSaleDetails.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="BillSaleDetailsR04">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_USER_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="BILL_SALE_DETAILS_R04"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.BillSaleDetails.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.abdo.adf.storeshop.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

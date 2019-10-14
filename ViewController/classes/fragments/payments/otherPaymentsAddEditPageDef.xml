@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="otherPaymentsAddEditPageDef"
+                Package="fragments.payments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="OtherPaymentsView1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="OtherPaymentsView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="OtherPaymentsView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="OtherPaymentsView1Iterator" StaticList="false" Uses="LOV_PaymentType" id="PaymentType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="OtherPaymentsView1Iterator" id="PaymentDate">
+      <AttrNames>
+        <Item Value="PaymentDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OtherPaymentsView1Iterator" id="Price">
+      <AttrNames>
+        <Item Value="Price"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="OtherPaymentsView1Iterator" id="Comments">
+      <AttrNames>
+        <Item Value="Comments"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" InstanceName="StoreShopModuleDataControl" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,516 @@
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+@font-face {
+  font-family: myLoginArabicFont;
+  src: url(../../fonts/Amiri/Amiri-Regular.ttf);
+}
+
+@font-face {
+  font-family: lateef;
+  src: url(../../fonts/Lateef/LateefRegOT.ttf);
+}
+
+
+@font-face {
+  font-family: 'Jomhuria', cursive;
+  src: url(../../fonts/Jomhuria/Jomhuria-Regular.ttf);
+}
+/******	Start Of PanelAccordion	*********/
+
+af|panelAccordion
+{
+  -tr-header-height: 40; 
+}
+af|panelAccordion::body-content,
+af|panelAccordion::header
+{
+  background-color: transparent; 
+  background-image: none; 
+  color: inherit; 
+} 
+/*,af|panelBox **/
+af|panelAccordion  *
+{
+  
+  padding:0px !important;
+  margin: 0px !important;
+  border:0 !important;
+  font-family: 'Droid Arabic Kufi', serif !important;
+}
+.x163.p_AFDisclosed .x129,
+.x163.p_AFDisclosed .x168,
+.x164 .x129,
+.x164 .x168,
+.x164 .x165,
+.x163 .x129,
+.x163 .x168,
+.x163 .x165
+
+{
+background-image: none !important;
+background-color: #30732e !important;
+color:#fff;
+}
+.x163.p_AFDisclosed .x16c,
+.x164 .x16c,
+.x163 .x16c{
+background-image: none !important;
+background-color: #30732e !important;
+
+}
+.x163.p_AFDisclosed .x16d,
+.x164 .x16d,
+.x163 .x16d
+{
+background-image: none !important;
+background-color: #30732e !important;
+
+}
+.x163 .x165 a:hover,.x164 .x165 a:hover{background-color:transparent !important;}
+.x169{background-image: none !important;}
+
+
+
+af|panelAccordion::header-title
+{
+
+  color:#000 ;
+}
+af|panelAccordion a{
+color:#383736 ;
+text-decoration: none;
+padding:12px 10px !important ;
+border-right:1px solid #eee;
+border-left:1px solid #eee;
+ 
+display:block;
+text-align: right;
+direction: ltr;
+font-size: 13px;
+}
+af|panelAccordion a i{
+margin-left:10px !important;
+font-size:15px !important;
+}
+af|panelAccordion a:hover{
+background-color:#fff !important;
+color:#945511;
+
+ 
+}
+/****** End of PanelAccordion	*********/
+
+
+af|panelBox
+{
+  height: auto; 
+}
+ 
+/**/
+af|panelBox::header-center,
+af|panelBox::header-start,
+af|panelBox::header-end
+{
+  background-color: rgb(69,69,69) !important;
+  background-image: none !important;
+}
+af|panelBox af|panelBox::header-element
+{
+  font-family: Geneva, Arial, Helvetica, sans-serif; 
+  font-size: 25px; 
+  font-weight: bold; 
+   color: yellow;
+   padding:13px 0 !important;
+ 
+}
+af|panelBox af|panelBox::disclosed-icon-style,
+af|panelBox af|panelBox::undisclosed-icon-style
+{
+ margin:0 10px  !important;
+}
+
+af|panelBox  af|panelBox::content
+{
+ background-color: #fff;
+direction: rtl;
+padding: 20px !important;
+border: 1px solid #b3b3b3 !important;
+text-align: right;
+color: #000000 !important;
+}
+
+af|panelBox af|commandButton{
+ padding:10px 25px !important;
+ margin:0px 5px !important;
+}
+af|panelBox::footer-center,
+af|panelBox::footer-end,
+af|panelBox::footer-start
+
+{
+  background-image: none !important; 
+}
+ 
+ 
+af|panelBox::disclosed-icon,
+af|panelBox::disclosed-icon-style,
+af|panelBox::undisclosed-icon,
+af|panelBox::undisclosed-icon-style
+{
+  background-image: none !important; 
+}
+/******	End  Of panelBox	*********/
+
+
+
+
+
+ 
+
+
+
+ 
+ 
+
+ 
+af|outputLabel,af|inputText::label,af|selectManyChoice::label,af|selectOneChoice::label,
+af|panelLabelAndMessage::label
+{
+  text-align: right !important;
+  font-family: 'Droid Arabic Kufi', serif !important;
+  color:#000 !important;
+  margin-bottom: 20px !important;
+  width: 250px; 
+  font-size: 12px; 
+  alignment-baseline: middle; 
+  vertical-align: middle; 
+  
+} 
+af|commandButton ,af|commandToolbarButton,af|resetButton
+{
+-webkit-border-radius: 10px 0 10px 0;
+border-radius: 10px 0 10px 0;
+    color: #fff;
+    background-color: #337ab7 !important;
+    border-color: #2e6da4 !important;
+    background-image: none !important; 
+   color: #ffffff !important; 
+  font-family: 'Droid Arabic Kufi', serif !important; 
+  padding:10px 25px !important;
+  border:0 !important;
+  font-size:14px !important;
+  height: auto; 
+  
+}
+af|commandButton img{vertical-align: middle!important; }
+
+af|commandButton:hover,af|commandButton:hover-target,af|commandToolbarButton:hover-target
+{
+ background-color: Black !important; 
+} 
+
+af|commandButton:disabled{
+background-color: #dedede !important; 
+}
+
+ 
+ 
+
+af|inputText  af|inputText::content
+{
+display:block ;
+  
+  height:34px;
+  padding:6px 12px !important;
+  font-size:14px;
+  line-height:1.42857143;
+  color:#555;
+  background-color:#fff;
+  background-image:none;
+ /* border:1px solid #ccc !important;*/
+ 
+  box-shadow:inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+ af|inputDate::label{
+ padding: 0px 0px 0px 6px;text-align: right !important;font-family: 'Droid Arabic Kufi', serif !important;color: #000 !important;margin-bottom: 
+20px !important;width: 250px;font-size: 12px;alignment-baseline: middle;vertical-align: middle;
+ }
+
+ af|inputDate::content{
+    width: 230px !important;
+    height: 34px !important;
+    padding: 6px 12px !important;
+    margin-bottom: 10px !important;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    font-weight:bold;
+    font-weight:bold !important;
+ }
+
+
+af|panelCollection   
+{
+  width: 100%; 
+  border: 1px solid #dedede; 
+  
+}
+ af|panelCollection  af|commandButton,
+  af|panelCollection  af|commandToolbarButton
+  ,af|panelGridLayout af|commandButton{
+ padding: 2px 10px !Important;
+margin-top: 5px !important;
+margin-bottom: 5px !important;
+font-size:12px !important;
+ }
+ 
+ 
+ 
+ 
+
+/* panel Splitter*/
+af|panelSplitter
+{
+  width: 100%; 
+  min-height:600px;
+ 
+}
+ 
+
+
+
+
+  
+
+
+ 
+af|panelTabbed::body-end
+{
+  background-image: none; 
+}
+af|panelTabbed::body-start
+{
+  background-image: none; 
+}
+af|panelTabbed::body
+{
+/*padding-top:10px;*/
+  background-image: none; 
+}
+af|panelTabbed::footer-center
+{
+  background-image: none; 
+}
+af|panelTabbed::footer-end
+{
+  background-image: none; 
+}
+af|panelTabbed::footer-start
+{
+  background-image: none; 
+}
+af|commandToolbarButton::text
+{
+   color: #ffffff !important; 
+  
+}
+af|commandToolbarButton::text:hover-target
+{
+
+}
+
+ /**/
+af|inputText::content
+{
+  display: block;
+  width: 250px;
+  height: 34px;
+  padding: 6px 12px;
+  margin-bottom:10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+          transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+ 
+ 
+af|train
+{
+  background-color: #fff; 
+  width: 100%; 
+  padding:20px;
+  
+  border:1px solid #c2c2c2;
+  
+  font-size: 12px; 
+   
+ 
+}
+af|train a
+{
+  color: #797979 !important; 
+}
+
+af|selectOneChoice::content
+{
+  width: 250px; 
+  border-color: #ccc; 
+  height: 30px;
+  font-family: Georgia;
+  font-size: 16px;
+}
+ 
+ 
+ 
+af|train::stop-icon-selected
+{
+  background-image: none; 
+  background-color: #5ed67d;
+}
+af|train::stop-icon-unvisited
+{
+  background-image: none; 
+  background-color: #dedede; 
+}
+  @agent (touchScreen:none) {
+  af|train::stop-icon-visited:hover,
+  af|train-vertical::stop-icon-visited:hover {
+   background-image: none !important; 
+  background-color: #5ed67d !important;
+  }
+}
+ 
+af|train::stop-icon-visited
+{
+     background-image: none; 
+  background-color: #5ed67d;
+}
+
+ 
+af|panelLabelAndMessage::end-facet
+{
+  font-size: 12px; 
+}
+af|panelLabelAndMessage::content-cell
+{
+  font-size: 12px; 
+}
+
+ 
+af|panelGridLayout  
+{
+ 
+  font-size: 13px  ; 
+  
+}
+af|panelGridLayout  div
+{
+padding:10px 0 !important;
+margin:10px 0 !important;
+  
+  
+}
+
+ 
+af|toolbar  af|commandButton
+{
+ padding: 2px 10px !Important;
+margin-top: 5px !important;
+margin-bottom: 5px !important;
+font-size:12px !important; 
+
+
+}
+
+af|dvt-gaugePlotArea
+{
+  -tr-background-color: #30732e ; 
+}
+af|dvt-metricLabel
+{
+  -tr-color: #ffffff; 
+}
+af|dvt-lowerLabelFrame
+{
+  -tr-background-color: #30732e; 
+}
+af|dvt-bottomLabel
+{
+  -tr-color: #ffffff; 
+  -tr-font-family: 'Droid Arabic Kufi'; 
+}
+af|dvt-tickLabel
+{
+  -tr-color: #ffffff; 
+}
+af|dvt-indicator
+{
+  -tr-background-color: #ffffff; 
+}
+
+af|selectOneChoice:compact-content
+{
+  height: 30px; 
+}
+af|panelFormLayout * label
+{
+  font-family: myLoginArabicFont;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+af|panelFormLayout af|selectBooleanCheckbox::content{
+    text-align: right !important;
+}
+
+af|table::data-row
+{
+  color: Lime; 
+}
+af|table table
+{
+  width: 100% !important;
+   border: 0; 
+  border-color: transparent; 
+  background-color: transparent; 
+}
+af|table table td *{
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 16px;
+ font-weight: bold;
+ font-style: italic;
+ padding-right: 10px;
+ }
+
+af|table af|column::column-header-cell{
+ padding:   5px !important;/**/
+ font-weight: bold !important;
+  border-left:1px solid #dedede !important;
+  border-right:1px solid #dedede !important;
+  border-bottom-color:#dedede  ;
+  background-color: Black !important;
+  color: Yellow;
+ font-size: 22px;
+ text-align: center;
+ font-family: myLoginArabicFont;
+ }
+ 
+ af|table af|inputText,af|selectOneChoice{
+     height:10px;
+ }

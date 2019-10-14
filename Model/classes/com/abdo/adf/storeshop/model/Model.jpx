@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Model"
+  Version="11.1.2.64.36"
+  SeparateXMLFiles="true"
+  PackageName="com.abdo.adf.storeshop.model">
+  <DesignTime>
+    <Attr Name="_jprName" Value="../../../../../../Model.jpr"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
+    <Attr Name="_NamedConnection" Value="store_shop"/>
+    <Attr Name="_appModuleNames0" Value="com.abdo.adf.storeshop.model.appmodule.StoreShopModule"/>
+    <Attr Name="_domainNames0" Value="com.abdo.adf.storeshop.model.eo.IntervalDay"/>
+  </DesignTime>
+  <Containee
+    Name="appmodule"
+    PackageName="com.abdo.adf.storeshop.model.appmodule"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="eo"
+    PackageName="com.abdo.adf.storeshop.model.eo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+      <Attr Name="_AS" Value="true"/>
+      <Attr Name="_DO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="ro"
+    PackageName="com.abdo.adf.storeshop.model.ro"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="lov"
+    PackageName="com.abdo.adf.storeshop.model.vo.ro.lov"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="reports"
+    PackageName="com.abdo.adf.storeshop.model.vo.ro.reports"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="ro"
+    PackageName="com.abdo.adf.storeshop.model.vo.ro"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="vl"
+    PackageName="com.abdo.adf.storeshop.model.vo.ro.vl"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="vo"
+    PackageName="com.abdo.adf.storeshop.model.vo"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_VL" Value="true"/>
+    </DesignTime>
+  </Containee>
+</JboProject>

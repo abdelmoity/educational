@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36"
+                id="allPaymentsSalesOther_TF_allPaymentsSalesOther_TF_ExecuteWithParamsPageDef"
+                Package="taskflows.reports" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="AllTotalPaymentsSalesOtherReport1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="AllTotalPaymentsSalesOtherReport1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="AllTotalPaymentsSalesOtherReport1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="fromDate" NDValue="01-01-1990" NDType="oracle.jbo.domain.Date"/>
+      <NamedData NDName="toDate" NDValue="01-01-1990" NDType="oracle.jbo.domain.Date"/>
+    </action>
+  </bindings>
+</pageDefinition>

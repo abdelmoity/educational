@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="subjectsPageDef"
+                Package="fragments.lookups">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SubjectView1" RangeSize="25" DataControl="StoreShopModuleDataControl" id="SubjectView1Iterator"/>
+    <searchRegion Binds="SubjectView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="SubjectView1Query"/>
+  </executables>
+  <bindings>
+    <action IterBinding="SubjectView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="SubjectView1Iterator" id="SubjectView1">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.SubjectView" Name="SubjectView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SubjectView1Iterator" id="Delete" InstanceName="StoreShopModuleDataControl.SubjectView1"
+            DataControl="StoreShopModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" InstanceName="StoreShopModuleDataControl" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

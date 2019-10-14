@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="StudentView"
+  Version="11.1.2.64.36"
+  SelectList="Student.ID, 
+       Student.NAME, 
+       Student.PHONE, 
+       Student.ADDRESS, 
+       Student.PHOTO, 
+       Student.EMAIL, 
+       Student.DESCRIPTION"
+  FromList="STUDENT Student"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Student"
+    Entity="com.abdo.adf.storeshop.model.eo.Student"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Student"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="Student"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Phone"
+    PrecisionRule="true"
+    EntityAttrName="Phone"
+    EntityUsage="Student"
+    AliasName="PHONE"/>
+  <ViewAttribute
+    Name="Address"
+    PrecisionRule="true"
+    EntityAttrName="Address"
+    EntityUsage="Student"
+    AliasName="ADDRESS"/>
+  <ViewAttribute
+    Name="Photo"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="Photo"
+    EntityUsage="Student"
+    AliasName="PHOTO"/>
+  <ViewAttribute
+    Name="Email"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="Student"
+    AliasName="EMAIL"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="Student"
+    AliasName="DESCRIPTION"/>
+  <ViewLinkAccessor
+    Name="GroupStudentView"
+    ViewLink="com.abdo.adf.storeshop.model.vo.GriopStudentFk2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

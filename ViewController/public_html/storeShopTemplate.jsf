@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+    <af:resource type="css" source="/assets/bootstrap-4.3.1/css/bootstrap.min.css"/>
+    <af:resource type="css" source="/assets/css/overrideSkinDesktop.css"/>
+    <af:resource type="css" source="/assets/css/style.css"/>
+    <af:resource type="css"  source="assets/fontawesome-free-5.8.0-web/css/all.css"/>
+    <af:xmlContent>
+        <afc:component>
+            <afc:display-name>storeShopTemplate</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>mainContent</afc:facet-name>
+            </afc:facet>
+            <afc:facet>
+                <afc:facet-name>menuBarContent</afc:facet-name>
+            </afc:facet>
+        </afc:component>
+         <div class="container-fluid">
+        <!-- Full Page Image Header with Vertically Centered Content -->
+               <header class="masthead">
+                <div class="row">
+                <div class="col-3">
+                        <div style="float:right;">
+                        <af:outputLabel value="مرحبا:" id="pt_ol1" styleClass="titleFont1"/>
+                        <af:outputLabel value="#{sessionScope.userName}" id="pt_ol21" styleClass="titleFont1"/>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <af:panelGroupLayout id="pt_pgl1">
+                            <af:facetRef facetName="menuBarContent"/>
+                        </af:panelGroupLayout>
+                    </div>
+                    <div class="col-3">
+                      <div style="float:left;">
+                      <af:commandImageLink id="logOutId" action="#{loginBean.logOut}" icon="/assets/img/logout1.jpg" />
+                      </div>
+                    </div>
+                </div>
+                </header>
+        <!-- Page Content -->
+        
+                <div class="row">
+                <div class="col-12">
+            <div class="customContent" >
+            <af:facetRef facetName="mainContent"/>
+            </div>
+            </div>
+            </div>
+        <!-- Footer -->
+         <!-- Copyright -->
+    <!--<div style="height:25px;"><center> <label style="font-weight:bold;color:blue;">Abdelmoity Abdrabo - 01068941993@</label></center></div>-->
+    <!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" >© 2019 Copyright: abdelmoity abdrabo</div>
+</footer>
+<!-- Footer -->
+    </div>
+    <!-- Copyright -->
+    </af:xmlContent>
+    <af:resource type="javascript" source="/assets/jquery/jquery-3.3.1.js"/>
+    <af:resource type="javascript" source="/assets/bootstrap-4.3.1/js/bootstrap.min.js"/>
+    <af:resource type="javascript" source="/assets/bootstrap-4.3.1/js/bootstrap.bundle.js"/>
+</af:pageTemplateDef>

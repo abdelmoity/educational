@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductStatusView"
+  Version="11.1.2.64.36"
+  SelectList="ProductStatus.ID, 
+       ProductStatus.NAME"
+  FromList="PRODUCT_STATUS ProductStatus"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="ProductStatus"
+    Entity="com.abdo.adf.storeshop.model.eo.ProductStatus"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="ProductStatus"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="ProductStatus"
+    AliasName="NAME"/>
+</ViewObject>

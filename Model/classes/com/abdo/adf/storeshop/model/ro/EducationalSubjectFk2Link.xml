@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EducationalSubjectFk2Link"
+  Version="11.1.2.64.36">
+  <ViewLinkDefEnd
+    Name="SubjectView"
+    Cardinality="1"
+    Source="true"
+    Owner="com.abdo.adf.storeshop.model.ro.SubjectView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SubjectView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.ro.SubjectView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="EducationalSubjectView"
+    Cardinality="-1"
+    Owner="com.abdo.adf.storeshop.model.ro.EducationalSubjectView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="EducationalSubjectView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.ro.EducationalSubjectView.Subject"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

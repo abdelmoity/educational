@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36"
+                id="productsTypes_TF_productsTypes_TF_CreateInsertPageDef" Package="taskflows.lookups"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="ProductsTypeView2" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="ProductsTypeView2Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ProductsTypeView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="allproductsReportPageDef"
+                Package="fragments.reports.allproducts">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="productsRo1" RangeSize="25" DataControl="StoreShopModuleDataControl" id="productsRo1Iterator"/>
+    <searchRegion Binds="productsRo1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="productsRo1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="productsRo1Iterator" id="productsRo1">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.ro.productsRoReport" Name="productsRo10">
+        <AttrNames>
+          <Item Value="CategoryName"/>
+          <Item Value="Product"/>
+          <Item Value="ProductTypeName"/>
+          <Item Value="SalePrice"/>
+          <Item Value="AllAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction IterBinding="productsRo1Iterator" id="getAlltList" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getAlltList" IsViewObjectMethod="true" DataControl="StoreShopModuleDataControl"
+                  InstanceName="data.StoreShopModuleDataControl.productsRo1"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TaskflowFk3Link"
+  Version="11.1.2.64.36"
+  EntityAssociation="com.abdo.adf.storeshop.model.eo.TaskflowFk3Assoc">
+  <ViewLinkDefEnd
+    Name="SysUserView"
+    Cardinality="1"
+    Source="true"
+    Owner="com.abdo.adf.storeshop.model.vo.SysUserView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SysUserView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.vo.SysUserView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="SysTaskflowsView"
+    Cardinality="-1"
+    Owner="com.abdo.adf.storeshop.model.vo.SysTaskflowsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SysTaskflowsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.vo.SysTaskflowsView.LastUpdatedBy"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PurchaseBillView"
+  Version="11.1.2.64.36"
+  SelectList="PurchaseBill.ID, 
+       PurchaseBill.BILL_DATE, 
+       PurchaseBill.SUPPLIER, 
+       PurchaseBill.TOTAL_PRICE, 
+       PurchaseBill.TOTAL_DISCOUNT, 
+       PurchaseBill.CREATED_BY, 
+       PurchaseBill.CREATED_DATE, 
+       PurchaseBill.LAST_UPDATED_BY, 
+       PurchaseBill.LAST_UPDATED_DATE"
+  FromList="PURCHASE_BILL PurchaseBill"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="Supplier1"
+    ViewObjectName="com.abdo.adf.storeshop.model.vo.ro.lov.Supplier"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Supplier"
+    ListVOName="Supplier1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Supplier"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CompanyName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="PurchaseBill"
+    Entity="com.abdo.adf.storeshop.model.eo.PurchaseBill"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="PurchaseBill"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="BillDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="BillDate"
+    EntityUsage="PurchaseBill"
+    AliasName="BILL_DATE"/>
+  <ViewAttribute
+    Name="Supplier"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Supplier"
+    EntityUsage="PurchaseBill"
+    AliasName="SUPPLIER"
+    LOVName="LOV_Supplier">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TotalPrice"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TotalPrice"
+    EntityUsage="PurchaseBill"
+    AliasName="TOTAL_PRICE"/>
+  <ViewAttribute
+    Name="TotalDiscount"
+    PrecisionRule="true"
+    EntityAttrName="TotalDiscount"
+    EntityUsage="PurchaseBill"
+    AliasName="TOTAL_DISCOUNT"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="PurchaseBill"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="PurchaseBill"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="PurchaseBill"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedDate"
+    EntityUsage="PurchaseBill"
+    AliasName="LAST_UPDATED_DATE"/>
+  <ViewLinkAccessor
+    Name="PurchaseBillDetailsView"
+    ViewLink="com.abdo.adf.storeshop.model.vo.PurchaseBillDetailsFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

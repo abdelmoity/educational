@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Subject"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="SUBJECT"
+  AliasName="Subject"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="com.abdo.adf.storeshop.model.eo.SubjectImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SUBJECT"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.Subject.Id_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUBJECT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.Subject.Name_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="100"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SUBJECT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.Subject.Description_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Groups"
+    Association="com.abdo.adf.storeshop.model.eo.GroupsFk2Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.GroupsFk2Assoc.Groups"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.GroupsFk2Assoc.Subject"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="EducationalSubject"
+    Association="com.abdo.adf.storeshop.model.eo.EducationalSubjectFk2Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.EducationalSubjectFk2Assoc.EducationalSubject"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.EducationalSubjectFk2Assoc.Subject1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SubjectPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SUBJECT_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.Subject.Id"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.abdo.adf.storeshop.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

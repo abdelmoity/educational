@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="OtherPaymentsView"
+  Version="11.1.2.64.36"
+  SelectList="OtherPayments.ID, 
+       OtherPayments.PAYMENT_TYPE, 
+       OtherPayments.PAYMENT_DATE, 
+       OtherPayments.COMMENTS, 
+       OtherPayments.CREATED_BY, 
+       OtherPayments.CREATED_DATE, 
+       OtherPayments.LAST_UPDATED_BY, 
+       OtherPayments.LAST_UPDATED_DATE, 
+       OtherPayments.PRICE"
+  FromList="OTHER_PAYMENTS OtherPayments"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="PaymentsTypeLov1"
+    ViewObjectName="com.abdo.adf.storeshop.model.vo.ro.lov.PaymentsTypeLov"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_PaymentType"
+    ListVOName="PaymentsTypeLov1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PaymentType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="OtherPayments"
+    Entity="com.abdo.adf.storeshop.model.eo.OtherPayments"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="OtherPayments"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="PaymentType"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PaymentType"
+    EntityUsage="OtherPayments"
+    AliasName="PAYMENT_TYPE"
+    LOVName="LOV_PaymentType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PaymentDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PaymentDate"
+    EntityUsage="OtherPayments"
+    AliasName="PAYMENT_DATE"/>
+  <ViewAttribute
+    Name="Comments"
+    PrecisionRule="true"
+    EntityAttrName="Comments"
+    EntityUsage="OtherPayments"
+    AliasName="COMMENTS"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="OtherPayments"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="OtherPayments"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="OtherPayments"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedDate"
+    EntityUsage="OtherPayments"
+    AliasName="LAST_UPDATED_DATE"/>
+  <ViewAttribute
+    Name="Price"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Price"
+    EntityUsage="OtherPayments"
+    AliasName="PRICE"/>
+</ViewObject>

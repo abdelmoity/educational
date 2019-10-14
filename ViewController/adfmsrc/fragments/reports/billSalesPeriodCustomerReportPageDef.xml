@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36"
+                id="billSalesPeriodCustomerReportPageDef" Package="fragments.reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variableUsage DataControl="StoreShopModuleDataControl" Binds="billSalesByPeriodCustomer1.variablesMap.customer"
+                     Name="ExecuteWithParams_customer" IsQueriable="false"/>
+      <variableUsage DataControl="StoreShopModuleDataControl" Binds="billSalesByPeriodCustomer1.variablesMap.fromDate"
+                     Name="ExecuteWithParams_fromDate" IsQueriable="false"/>
+      <variableUsage DataControl="StoreShopModuleDataControl" Binds="billSalesByPeriodCustomer1.variablesMap.toDate"
+                     Name="ExecuteWithParams_toDate" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="billSalesByPeriodCustomer1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="billSalesByPeriodCustomer1Iterator"/>
+    <iterator Binds="CustomersLov1" RangeSize="-1" DataControl="StoreShopModuleDataControl" id="CustomersLov1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="billSalesByPeriodCustomer1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="fromDate" NDType="oracle.jbo.domain.Date" NDValue="${bindings.ExecuteWithParams_fromDate}"/>
+      <NamedData NDName="toDate" NDType="oracle.jbo.domain.Date" NDValue="${bindings.ExecuteWithParams_toDate}"/>
+      <NamedData NDName="customer" NDType="oracle.jbo.domain.Number" NDValue="${bindings.ExecuteWithParams_customer}"/>
+    </action>
+    <list IterBinding="variables" id="customer" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="CustomersLov1Iterator">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_customer"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="Id"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Id"/>
+      </ListDisplayAttrNames>
+    </list>
+    <attributeValues IterBinding="variables" id="fromDate">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_fromDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="toDate">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_toDate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GroupStudent"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="GROUP_STUDENT"
+  AliasName="GroupStudent"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="GROUP_STUDENT"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="GroupId"
+    IsUnique="true"
+    IsNotNull="true"
+    ColumnName="GROUP_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="GROUP_STUDENT"/>
+  <Attribute
+    Name="StudentId"
+    IsUnique="true"
+    IsNotNull="true"
+    ColumnName="STUDENT_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="GROUP_STUDENT"/>
+  <Attribute
+    Name="Description"
+    Precision="100"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="GROUP_STUDENT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Groups"
+    Association="com.abdo.adf.storeshop.model.eo.GriopStudentFk1Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.GriopStudentFk1Assoc.Groups"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.GriopStudentFk1Assoc.GroupStudent"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Money"
+    Association="com.abdo.adf.storeshop.model.eo.SubjectMoneyFk2Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.SubjectMoneyFk2Assoc.Money"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.SubjectMoneyFk2Assoc.GroupStudent1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Student"
+    Association="com.abdo.adf.storeshop.model.eo.GriopStudentFk2Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.GriopStudentFk2Assoc.Student"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.GriopStudentFk2Assoc.GroupStudent"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TestStudent"
+    Association="com.abdo.adf.storeshop.model.eo.TestStudentFk2Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.TestStudentFk2Assoc.TestStudent"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.TestStudentFk2Assoc.GroupStudent1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="GriopStudentPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="GRIOP_STUDENT_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.GroupStudent.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="GriopStudentUk1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="GRIOP_STUDENT_UK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.GroupStudent.GroupId"/>
+      <Item Value="com.abdo.adf.storeshop.model.eo.GroupStudent.StudentId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="GriopStudentFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="GROUPS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="GRIOP_STUDENT_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.GroupStudent.GroupId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="GriopStudentFk2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="STUDENT_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="GRIOP_STUDENT_FK2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.GroupStudent.StudentId"/>
+    </AttrArray>
+  </Key>
+</Entity>

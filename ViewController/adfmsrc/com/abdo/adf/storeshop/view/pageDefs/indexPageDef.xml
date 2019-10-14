@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="indexPageDef"
+                Package="com.abdo.adf.storeshop.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${mainBean.dynamicTaskFlowId}" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="SysTaskFlowParent2" RangeSize="10" DataControl="StoreShopModuleDataControl"
+              id="SysTaskFlowParent2Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SysTaskFlowParent2Iterator" id="SysTaskFlowParent2">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.ro.SysTaskFlowParent" Name="SysTaskFlowParent20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="TaskflowName"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="SysTaskFlowChild"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.ro.SysTaskFlowChild" Name="SysTaskFlowParent21">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Parent"/>
+          <Item Value="TaskflowName"/>
+          <Item Value="TaskFlowUrl"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

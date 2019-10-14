@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36"
+                id="purchasesTF_purchasesTF_CreateInsertPageDef" Package="taskflows.purchases" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="PurchaseBillView1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="PurchaseBillView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="PurchaseBillView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

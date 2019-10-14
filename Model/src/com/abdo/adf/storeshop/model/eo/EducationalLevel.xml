@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EducationalLevel"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="EDUCATIONAL_LEVEL"
+  AliasName="EducationalLevel"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="com.abdo.adf.storeshop.model.eo.EducationalLevelImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EDUCATIONAL_LEVEL"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.EducationalLevel.Id_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EDUCATIONAL_LEVEL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.EducationalLevel.Name_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="100"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EDUCATIONAL_LEVEL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.EducationalLevel.Description_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="Groups"
+    Association="com.abdo.adf.storeshop.model.eo.GroupsFk1Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.GroupsFk1Assoc.Groups"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.GroupsFk1Assoc.EducationalLevel1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="EducationalSubject"
+    Association="com.abdo.adf.storeshop.model.eo.EducationalSubjectFk1Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.EducationalSubjectFk1Assoc.EducationalSubject"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.EducationalSubjectFk1Assoc.EducationalLevel1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="EducationalLevelPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EDUCATIONAL_LEVEL_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.EducationalLevel.Id"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.abdo.adf.storeshop.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

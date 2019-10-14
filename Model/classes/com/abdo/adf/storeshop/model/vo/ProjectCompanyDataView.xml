@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProjectCompanyDataView"
+  Version="11.1.2.64.36"
+  SelectList="ProjectCompanyData.ID, 
+       ProjectCompanyData.COMPANY_NAME, 
+       ProjectCompanyData.ADDRESS, 
+       ProjectCompanyData.PHONE_NUMBER, 
+       ProjectCompanyData.COMMERICIAL_ID, 
+       ProjectCompanyData.TAX_CARD"
+  FromList="PROJECT_COMPANY_DATA ProjectCompanyData"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="ProjectCompanyData"
+    Entity="com.abdo.adf.storeshop.model.eo.ProjectCompanyData"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="ProjectCompanyData"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="CompanyName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CompanyName"
+    EntityUsage="ProjectCompanyData"
+    AliasName="COMPANY_NAME"/>
+  <ViewAttribute
+    Name="Address"
+    PrecisionRule="true"
+    EntityAttrName="Address"
+    EntityUsage="ProjectCompanyData"
+    AliasName="ADDRESS"/>
+  <ViewAttribute
+    Name="PhoneNumber"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PhoneNumber"
+    EntityUsage="ProjectCompanyData"
+    AliasName="PHONE_NUMBER"/>
+  <ViewAttribute
+    Name="CommericialId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CommericialId"
+    EntityUsage="ProjectCompanyData"
+    AliasName="COMMERICIAL_ID"/>
+  <ViewAttribute
+    Name="TaxCard"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TaxCard"
+    EntityUsage="ProjectCompanyData"
+    AliasName="TAX_CARD"/>
+</ViewObject>

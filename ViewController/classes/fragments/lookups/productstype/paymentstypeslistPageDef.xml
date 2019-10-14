@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="paymentstypeslistPageDef"
+                Package="fragments.lookups.productstype">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PaymentsTypesView1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="PaymentsTypesView1Iterator"/>
+    <searchRegion Binds="PaymentsTypesView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PaymentsTypesView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PaymentsTypesView1Iterator" id="PaymentsTypesView1">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.PaymentsTypesView" Name="PaymentsTypesView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" InstanceName="StoreShopModuleDataControl" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action IterBinding="PaymentsTypesView1Iterator" id="Delete"
+            InstanceName="StoreShopModuleDataControl.PaymentsTypesView1" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

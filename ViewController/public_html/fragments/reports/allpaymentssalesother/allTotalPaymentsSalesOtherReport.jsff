@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <f:loadBundle basename="com.abdo.adf.storeshop.view.bundle.viewController" var="bundle"/>
+    <af:panelBox text="#{bundle.ALL_PAYMENTS_SALES_OTHER_REPORT}" id="pb1" showDisclosure="false">
+        <af:panelFormLayout id="pfl1" rows="1">
+            <af:inputDate value="#{bindings.fromDate.inputValue}" label="#{bindings.fromDate.hints.label}"
+                          required="#{bindings.fromDate.hints.mandatory}"
+                          columns="#{bindings.fromDate.hints.displayWidth}"
+                          shortDesc="#{bindings.fromDate.hints.tooltip}" id="id1">
+                <f:validator binding="#{bindings.fromDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.fromDate.format}"/>
+            </af:inputDate>
+            <af:inputDate value="#{bindings.toDate.inputValue}" label="#{bindings.toDate.hints.label}"
+                          required="#{bindings.toDate.hints.mandatory}" columns="#{bindings.toDate.hints.displayWidth}"
+                          shortDesc="#{bindings.toDate.hints.tooltip}" id="id2">
+                <f:validator binding="#{bindings.toDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.toDate.format}"/>
+            </af:inputDate>
+            <af:commandButton actionListener="#{bindings.ExecuteWithParams.execute}" text="#{bundle.SHOW_ALL}"
+                              disabled="#{!bindings.ExecuteWithParams.enabled}" id="cb1"/>
+        </af:panelFormLayout>
+        <af:table value="#{bindings.AllTotalPaymentsSalesOtherReport1.collectionModel}" var="row"
+                  rows="#{bindings.AllTotalPaymentsSalesOtherReport1.rangeSize}"
+                  emptyText="#{bindings.AllTotalPaymentsSalesOtherReport1.viewable ? bundle.NO_DATA_TO_DISPLAY : 'Access Denied.'}"
+                  fetchSize="#{bindings.AllTotalPaymentsSalesOtherReport1.rangeSize}" rowBandingInterval="0"
+                  filterModel="#{bindings.AllTotalPaymentsSalesOtherReport1Query.queryDescriptor}"
+                  queryListener="#{bindings.AllTotalPaymentsSalesOtherReport1Query.processQuery}" filterVisible="true"
+                  varStatus="vs" styleClass="AFStretchWidth table" inlineStyle="height:500px;"
+                  selectedRowKeys="#{bindings.AllTotalPaymentsSalesOtherReport1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.AllTotalPaymentsSalesOtherReport1.collectionModel.makeCurrent}"
+                  rowSelection="single" id="t1" partialTriggers="::cb1">
+            <af:column sortProperty="#{bindings.AllTotalPaymentsSalesOtherReport1.hints.Type.name}" filterable="true"
+                       sortable="true" headerText="#{bindings.AllTotalPaymentsSalesOtherReport1.hints.Type.label}" id="c2" >
+                <af:outputText value="#{row.Type}" shortDesc="#{bindings.AllTotalPaymentsSalesOtherReport1.hints.Type.tooltip}" id="ot2"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.AllTotalPaymentsSalesOtherReport1.hints.TotalPrice.name}"
+                       filterable="true" sortable="true"
+                       headerText="#{bindings.AllTotalPaymentsSalesOtherReport1.hints.TotalPrice.label}" id="c1">
+                <af:outputText value="#{row.TotalPrice}"
+                               shortDesc="#{bindings.AllTotalPaymentsSalesOtherReport1.hints.TotalPrice.tooltip}"
+                               id="ot1">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.AllTotalPaymentsSalesOtherReport1.hints.TotalPrice.format}"/>
+                </af:outputText>
+            </af:column>
+        </af:table>
+    </af:panelBox>
+</ui:composition>

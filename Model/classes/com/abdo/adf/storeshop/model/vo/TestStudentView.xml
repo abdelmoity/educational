@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TestStudentView"
+  Version="11.1.2.64.36"
+  SelectList="TestStudent.ID, 
+       TestStudent.TEST_ID, 
+       TestStudent.GROUP_STUDENT, 
+       TestStudent.DEGREE, 
+       TestStudent.NOTES, 
+       TestStudent.GROUP_ID"
+  FromList="TEST_STUDENT TestStudent"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="TestStudent"
+    Entity="com.abdo.adf.storeshop.model.eo.TestStudent"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="TestStudent"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="TestId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TestId"
+    EntityUsage="TestStudent"
+    AliasName="TEST_ID"/>
+  <ViewAttribute
+    Name="GroupStudent"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GroupStudent"
+    EntityUsage="TestStudent"
+    AliasName="GROUP_STUDENT"/>
+  <ViewAttribute
+    Name="Degree"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Degree"
+    EntityUsage="TestStudent"
+    AliasName="DEGREE"/>
+  <ViewAttribute
+    Name="Notes"
+    PrecisionRule="true"
+    EntityAttrName="Notes"
+    EntityUsage="TestStudent"
+    AliasName="NOTES"/>
+  <ViewAttribute
+    Name="GroupId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GroupId"
+    EntityUsage="TestStudent"
+    AliasName="GROUP_ID"/>
+</ViewObject>

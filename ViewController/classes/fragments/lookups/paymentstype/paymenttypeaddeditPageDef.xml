@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="paymenttypeaddeditPageDef"
+                Package="fragments.lookups.paymentstype">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PaymentsTypesView1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="PaymentsTypesView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PaymentsTypesView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PaymentsTypesView1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" InstanceName="StoreShopModuleDataControl" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+<f:loadBundle basename="com.abdo.adf.storeshop.view.bundle.viewController" var="bundle"/>
+  <af:panelBox text="#{bundle.ALL_PRODUCTS_REPORT}" id="pb1" showDisclosure="false" >
+    <af:table value="#{bindings.productsRo1.collectionModel}" var="row" rows="#{bindings.productsRo1.rangeSize}"
+              emptyText="#{bindings.productsRo1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              fetchSize="#{bindings.productsRo1.rangeSize}" rowBandingInterval="0"
+              filterModel="#{bindings.productsRo1Query.queryDescriptor}"
+              queryListener="#{bindings.productsRo1Query.processQuery}" filterVisible="true" varStatus="vs"
+              selectedRowKeys="#{bindings.productsRo1.collectionModel.selectedRow}"
+              selectionListener="#{bindings.productsRo1.collectionModel.makeCurrent}" rowSelection="single" id="t1"
+              styleClass="AFStretchWidth table" inlineStyle="height:500px;">
+      <af:column sortProperty="#{bindings.productsRo1.hints.CategoryName.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.productsRo1.hints.CategoryName.label}" id="c1">
+        <af:outputText value="#{row.CategoryName}" shortDesc="#{bindings.productsRo1.hints.CategoryName.tooltip}"
+                       id="ot1"/>
+      </af:column>
+      <af:column sortProperty="#{bindings.productsRo1.hints.Product.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.productsRo1.hints.Product.label}" id="c2" width="25">
+        <af:outputText value="#{row.Product}" shortDesc="#{bindings.productsRo1.hints.Product.tooltip}" id="ot2">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.productsRo1.hints.Product.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.productsRo1.hints.ProductTypeName.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.productsRo1.hints.ProductTypeName.label}" id="c3">
+        <af:outputText value="#{row.ProductTypeName}" shortDesc="#{bindings.productsRo1.hints.ProductTypeName.tooltip}"
+                       id="ot3"/>
+      </af:column>
+      <af:column sortProperty="#{bindings.productsRo1.hints.SalePrice.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.productsRo1.hints.SalePrice.label}" id="c4" width="25">
+        <af:outputText value="#{row.SalePrice}" shortDesc="#{bindings.productsRo1.hints.SalePrice.tooltip}" id="ot4">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.productsRo1.hints.SalePrice.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.productsRo1.hints.AllAmount.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.productsRo1.hints.AllAmount.label}" id="c5" width="25">
+        <af:outputText value="#{row.AllAmount}" shortDesc="#{bindings.productsRo1.hints.AllAmount.tooltip}" id="ot5">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.productsRo1.hints.AllAmount.format}"/>
+        </af:outputText>
+      </af:column>
+    </af:table>
+  </af:panelBox>
+  
+</ui:composition>

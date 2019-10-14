@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GroupAppointmentsView"
+  Version="11.1.2.64.36"
+  SelectList="GroupAppointments.ID, 
+       GroupAppointments.GROUP_ID, 
+       GroupAppointments.DAY, 
+       GroupAppointments.TIME_FROM, 
+       GroupAppointments.TIME_TO, 
+       GroupAppointments.DESCRIPTION"
+  FromList="GROUP_APPOINTMENTS GroupAppointments"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="GroupAppointments"
+    Entity="com.abdo.adf.storeshop.model.eo.GroupAppointments"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="GroupAppointments"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="GroupId"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GroupId"
+    EntityUsage="GroupAppointments"
+    AliasName="GROUP_ID"/>
+  <ViewAttribute
+    Name="Day"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Day"
+    EntityUsage="GroupAppointments"
+    AliasName="DAY"/>
+  <ViewAttribute
+    Name="TimeFrom"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TimeFrom"
+    EntityUsage="GroupAppointments"
+    AliasName="TIME_FROM"/>
+  <ViewAttribute
+    Name="TimeTo"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TimeTo"
+    EntityUsage="GroupAppointments"
+    AliasName="TIME_TO"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="GroupAppointments"
+    AliasName="DESCRIPTION"/>
+</ViewObject>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GroupAppointmentsFk1Link"
+  Version="11.1.2.64.36"
+  EntityAssociation="com.abdo.adf.storeshop.model.eo.GroupAppointmentsFk1Assoc">
+  <ViewLinkDefEnd
+    Name="GroupsView"
+    Cardinality="1"
+    Source="true"
+    Owner="com.abdo.adf.storeshop.model.vo.GroupsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="GroupsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.vo.GroupsView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="GroupAppointmentsView"
+    Cardinality="-1"
+    Owner="com.abdo.adf.storeshop.model.vo.GroupAppointmentsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="GroupAppointmentsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.vo.GroupAppointmentsView.GroupId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductsTypeFk3Link"
+  Version="11.1.2.64.36"
+  EntityAssociation="com.abdo.adf.storeshop.model.eo.ProductsTypeFk3Assoc">
+  <ViewLinkDefEnd
+    Name="ProductsCategoryView"
+    Cardinality="1"
+    Source="true"
+    Owner="com.abdo.adf.storeshop.model.vo.ProductsCategoryView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ProductsCategoryView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.vo.ProductsCategoryView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ProductsTypeView"
+    Cardinality="-1"
+    Owner="com.abdo.adf.storeshop.model.vo.ProductsTypeView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ProductsTypeView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.vo.ProductsTypeView.Category"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EducationalSubjectView"
+  Version="11.1.2.64.36"
+  SelectList="EducationalSubject.ID, 
+       EducationalSubject.EDUCATIONAL_LEVEL, 
+       EducationalSubject.SUBJECT, 
+       EducationalSubject.DESCRIPTION, 
+       EducationalSubject.PRICE"
+  FromList="EDUCATIONAL_SUBJECT EducationalSubject"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="EducationalLevelView1"
+    ViewObjectName="com.abdo.adf.storeshop.model.ro.EducationalLevelView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="SubjectView1"
+    ViewObjectName="com.abdo.adf.storeshop.model.ro.SubjectView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_EducationalLevel"
+    ListVOName="EducationalLevelView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EducationalLevel"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Subject"
+    ListVOName="SubjectView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Subject"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="EducationalSubject"
+    Entity="com.abdo.adf.storeshop.model.eo.EducationalSubject"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="EducationalSubject"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="EducationalLevel"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EducationalLevel"
+    EntityUsage="EducationalSubject"
+    AliasName="EDUCATIONAL_LEVEL"
+    LOVName="LOV_EducationalLevel">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Subject"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Subject"
+    EntityUsage="EducationalSubject"
+    AliasName="SUBJECT"
+    LOVName="LOV_Subject">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="EducationalSubject"
+    AliasName="DESCRIPTION"/>
+  <ViewAttribute
+    Name="Price"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Price"
+    EntityUsage="EducationalSubject"
+    AliasName="PRICE"/>
+</ViewObject>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.2.62.76" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.abdo.adf.storeshop.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/login.jsf" usageId="com_abdo_adf_storeshop_view_loginPageDef"/>
+    <page path="/index.jsf" usageId="com_abdo_adf_storeshop_view_indexPageDef"/>
+    <page path="/taskflows/lookups/customers_TF.xml#customers_TF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_customers_TF_customers_TF_RollbackPageDef"/>
+    <page path="/taskflows/lookups/customers_TF.xml#customers_TF@CreateInsert"
+          usageId="com_abdo_adf_storeshop_view_customers_TF_customers_TF_CreateInsertPageDef"/>
+    <page path="/fragments/lookups/customers/customersList.jsff"
+          usageId="com_abdo_adf_storeshop_view_customersListPageDef"/>
+    <page path="/fragments/lookups/customers/customersAddEdit.jsff"
+          usageId="com_abdo_adf_storeshop_view_customersAddEditPageDef"/>
+    <page path="/storeShopTemplate.jsf" usageId="com_abdo_adf_storeshop_view_storeShopTemplatePageDef"/>
+    <page path="/taskflows/lookups/suppliers_TF.xml#suppliers_TF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_suppliers_TF_suppliers_TF_RollbackPageDef"/>
+    <page path="/taskflows/lookups/suppliers_TF.xml#suppliers_TF@CreateInsert"
+          usageId="com_abdo_adf_storeshop_view_suppliers_TF_suppliers_TF_CreateInsertPageDef"/>
+    <page path="/fragments/lookups/suppliers/suppliersList.jsff"
+          usageId="com_abdo_adf_storeshop_view_suppliersListPageDef"/>
+    <page path="/fragments/lookups/suppliers/suppliersAddEdit.jsff"
+          usageId="com_abdo_adf_storeshop_view_suppliersAddEditPageDef"/>
+    <page path="/taskflows/lookups/employees_TF.xml#employees_TF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_employees_TF_employees_TF_RollbackPageDef"/>
+    <page path="/taskflows/lookups/employees_TF.xml#employees_TF@CreateInsert"
+          usageId="com_abdo_adf_storeshop_view_employees_TF_employees_TF_CreateInsertPageDef"/>
+    <page path="/fragments/lookups/employees/employeesList.jsff"
+          usageId="com_abdo_adf_storeshop_view_employeesListPageDef"/>
+    <page path="/fragments/lookups/employees/employeesAddEdit.jsff"
+          usageId="com_abdo_adf_storeshop_view_employeesAddEditPageDef"/>
+    <page path="/taskflows/lookups/productsTypes_TF.xml#productsTypes_TF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_productsTypes_TF_productsTypes_TF_RollbackPageDef"/>
+    <page path="/fragments/lookups/productstype/productstypes.jsff"
+          usageId="com_abdo_adf_storeshop_view_productstypesPageDef"/>
+    <page path="/taskflows/lookups/productsTypes_TF.xml#productsTypes_TF@CreateInsert"
+          usageId="com_abdo_adf_storeshop_view_productsTypes_TF_productsTypes_TF_CreateInsertPageDef"/>
+    <page path="/fragments/lookups/productstype/productstypesAddEdit.jsff"
+          usageId="com_abdo_adf_storeshop_view_productstypesAddEditPageDef"/>
+    <page path="/taskflows/lookups/paymentsTypesTF.xml#paymentsTypesTF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_paymentsTypesTF_paymentsTypesTF_RollbackPageDef"/>
+    <page path="/taskflows/lookups/paymentsTypesTF.xml#paymentsTypesTF@CreateInsert"
+          usageId="com_abdo_adf_storeshop_view_paymentsTypesTF_paymentsTypesTF_CreateInsertPageDef"/>
+    <page path="/fragments/lookups/paymentstype/paymentstypeslist.jsff"
+          usageId="com_abdo_adf_storeshop_view_paymentstypeslistPageDef"/>
+    <page path="/fragments/lookups/paymentstype/paymenttypeaddedit.jsff"
+          usageId="com_abdo_adf_storeshop_view_paymenttypeaddeditPageDef"/>
+    <page path="/taskflows/purchases/purchasesTF.xml#purchasesTF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_purchasesTF_purchasesTF_RollbackPageDef"/>
+    <page path="/taskflows/purchases/purchasesTF.xml#purchasesTF@CreateInsert"
+          usageId="com_abdo_adf_storeshop_view_purchasesTF_purchasesTF_CreateInsertPageDef"/>
+    <page path="/fragments/payments/purchaseBillsList.jsff"
+          usageId="com_abdo_adf_storeshop_view_purchaseBillsListPageDef"/>
+    <page path="/fragments/payments/purchaseBillDetails.jsff"
+          usageId="com_abdo_adf_storeshop_view_purchaseBillDetailsPageDef"/>
+    <page path="/taskflows/otherPaymentsTF.xml#otherPaymentsTF@CreateInsert"
+          usageId="com_abdo_adf_storeshop_view_otherPaymentsTF_otherPaymentsTF_CreateInsertPageDef"/>
+    <page path="/taskflows/otherPaymentsTF.xml#otherPaymentsTF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_otherPaymentsTF_otherPaymentsTF_RollbackPageDef"/>
+    <page path="/fragments/payments/otherPaymentsList.jsff"
+          usageId="com_abdo_adf_storeshop_view_otherPaymentsListPageDef"/>
+    <page path="/fragments/payments/otherPaymentsAddEdit.jsff"
+          usageId="com_abdo_adf_storeshop_view_otherPaymentsAddEditPageDef"/>
+    <page path="/taskflows/reports/allProducts_TF.xml#allProducts_TF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_allProducts_TF_allProducts_TF_RollbackPageDef"/>
+    <page path="/fragments/reports/allproducts/allproductsReport.jsff"
+          usageId="com_abdo_adf_storeshop_view_allproductsReportPageDef"/>
+    <page path="/taskflows/sales/salesTF.xml#salesTF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_salesTF_salesTF_RollbackPageDef"/>
+    <page path="/taskflows/sales/salesTF.xml#salesTF@CreateInsert"
+          usageId="com_abdo_adf_storeshop_view_salesTF_salesTF_CreateInsertPageDef"/>
+    <page path="/fragments/billsale/billSaleList.jsff" usageId="com_abdo_adf_storeshop_view_billSaleListPageDef"/>
+    <page path="/fragments/billsale/billSaleDetailsAddEdit.jsff"
+          usageId="com_abdo_adf_storeshop_view_billSaleDetailsAddEditPageDef"/>
+    <page path="/taskflows/reports/allPaymentsSalesOther_TF.xml#allPaymentsSalesOther_TF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_allPaymentsSalesOther_TF_allPaymentsSalesOther_TF_RollbackPageDef"/>
+    <page path="/fragments/reports/allpaymentssalesother/allTotalPaymentsSalesOtherReport.jsff"
+          usageId="com_abdo_adf_storeshop_view_allTotalPaymentsSalesOtherReportPageDef"/>
+    <page path="/taskflows/reports/allPaymentsSalesOther_TF.xml#allPaymentsSalesOther_TF@ExecuteWithParams"
+          usageId="com_abdo_adf_storeshop_view_allPaymentsSalesOther_TF_allPaymentsSalesOther_TF_ExecuteWithParamsPageDef"/>
+    <page path="/taskflows/reports/billSalesPeriodCustomerRport_TF.xml#billSalesPeriodCustomerRport_TF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_billSalesPeriodCustomerRport_TF_billSalesPeriodCustomerRport_TF_RollbackPageDef"/>
+    <page path="/fragments/reports/billSalesPeriodCustomerReport.jsff"
+          usageId="com_abdo_adf_storeshop_view_billSalesPeriodCustomerReportPageDef"/>
+    <page path="/taskflows/educational_levels_TF.xml#educational_levels_TF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_educational_levels_TF_educational_levels_TF_RollbackPageDef"/>
+    <page path="/fragments/lookups/educationallevels.jsff"
+          usageId="com_abdo_adf_storeshop_view_educationallevelsPageDef"/>
+    <page path="/fragments/lookups/subjects.jsff" usageId="com_abdo_adf_storeshop_view_subjectsPageDef"/>
+    <page path="/fragments/lookups/educationalsubject.jsff"
+          usageId="com_abdo_adf_storeshop_view_educationalsubjectPageDef"/>
+    <page path="/taskflows/educational_subject_TF.xml#educational_subject_TF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_educational_subject_TF_educational_subject_TF_RollbackPageDef"/>
+    <page path="/taskflows/subject_TF.xml#subject_TF@Rollback"
+          usageId="com_abdo_adf_storeshop_view_subject_TF_subject_TF_RollbackPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_abdo_adf_storeshop_view_loginPageDef" path="com.abdo.adf.storeshop.view.pageDefs.loginPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_indexPageDef" path="com.abdo.adf.storeshop.view.pageDefs.indexPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_customers_TF_customers_TF_RollbackPageDef"
+          path="taskflows.lookups.customers_TF_customers_TF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_customers_TF_customers_TF_CreateInsertPageDef"
+          path="taskflows.lookups.customers_TF_customers_TF_CreateInsertPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_customersListPageDef"
+          path="fragments.lookups.customers.customersListPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_customersAddEditPageDef"
+          path="fragments.lookups.customers.customersAddEditPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_storeShopTemplatePageDef"
+          path="com.abdo.adf.storeshop.view.pageDefs.storeShopTemplatePageDef"/>
+    <page id="com_abdo_adf_storeshop_view_suppliers_TF_suppliers_TF_RollbackPageDef"
+          path="taskflows.lookups.suppliers_TF_suppliers_TF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_suppliers_TF_suppliers_TF_CreateInsertPageDef"
+          path="taskflows.lookups.suppliers_TF_suppliers_TF_CreateInsertPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_suppliersListPageDef"
+          path="fragments.lookups.suppliers.suppliersListPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_suppliersAddEditPageDef"
+          path="fragments.lookups.suppliers.suppliersAddEditPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_employees_TF_employees_TF_RollbackPageDef"
+          path="taskflows.lookups.employees_TF_employees_TF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_employees_TF_employees_TF_CreateInsertPageDef"
+          path="taskflows.lookups.employees_TF_employees_TF_CreateInsertPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_employeesListPageDef"
+          path="fragments.lookups.employees.employeesListPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_employeesAddEditPageDef"
+          path="fragments.lookups.employees.employeesAddEditPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_productsTypes_TF_productsTypes_TF_RollbackPageDef"
+          path="taskflows.lookups.productsTypes_TF_productsTypes_TF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_productstypesPageDef"
+          path="fragments.lookups.productstype.productstypesPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_productsTypes_TF_productsTypes_TF_CreateInsertPageDef"
+          path="taskflows.lookups.productsTypes_TF_productsTypes_TF_CreateInsertPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_productstypesAddEditPageDef"
+          path="fragments.lookups.productstype.productstypesAddEditPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_paymentsTypesTF_paymentsTypesTF_RollbackPageDef"
+          path="taskflows.lookups.paymentsTypesTF_paymentsTypesTF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_paymentsTypesTF_paymentsTypesTF_CreateInsertPageDef"
+          path="taskflows.lookups.paymentsTypesTF_paymentsTypesTF_CreateInsertPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_paymentstypeslistPageDef"
+          path="fragments.lookups.productstype.paymentstypeslistPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_paymenttypeaddeditPageDef"
+          path="fragments.lookups.paymentstype.paymenttypeaddeditPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_purchasesTF_purchasesTF_RollbackPageDef"
+          path="taskflows.purchases.purchasesTF_purchasesTF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_purchasesTF_purchasesTF_CreateInsertPageDef"
+          path="taskflows.purchases.purchasesTF_purchasesTF_CreateInsertPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_purchaseBillsListPageDef" path="fragments.payments.purchaseBillsListPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_purchaseBillDetailsPageDef"
+          path="fragments.payments.purchaseBillDetailsPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_otherPaymentsTF_otherPaymentsTF_CreateInsertPageDef"
+          path="taskflows.otherPaymentsTF_otherPaymentsTF_CreateInsertPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_otherPaymentsTF_otherPaymentsTF_RollbackPageDef"
+          path="taskflows.otherPaymentsTF_otherPaymentsTF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_otherPaymentsListPageDef" path="fragments.payments.otherPaymentsListPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_otherPaymentsAddEditPageDef"
+          path="fragments.payments.otherPaymentsAddEditPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_allProducts_TF_allProducts_TF_RollbackPageDef"
+          path="taskflows.reports.allProducts_TF_allProducts_TF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_allproductsReportPageDef"
+          path="fragments.reports.allproducts.allproductsReportPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_salesTF_salesTF_RollbackPageDef"
+          path="taskflows.sales.salesTF_salesTF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_salesTF_salesTF_CreateInsertPageDef"
+          path="taskflows.sales.salesTF_salesTF_CreateInsertPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_billSaleListPageDef" path="fragments.billsale.billSaleListPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_billSaleDetailsAddEditPageDef"
+          path="fragments.billsale.billSaleDetailsAddEditPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_allPaymentsSalesOther_TF_allPaymentsSalesOther_TF_RollbackPageDef"
+          path="taskflows.reports.allPaymentsSalesOther_TF_allPaymentsSalesOther_TF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_allTotalPaymentsSalesOtherReportPageDef"
+          path="fragments.reports.allpaymentssalesother.allTotalPaymentsSalesOtherReportPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_allPaymentsSalesOther_TF_allPaymentsSalesOther_TF_ExecuteWithParamsPageDef"
+          path="taskflows.reports.allPaymentsSalesOther_TF_allPaymentsSalesOther_TF_ExecuteWithParamsPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_billSalesPeriodCustomerRport_TF_billSalesPeriodCustomerRport_TF_RollbackPageDef"
+          path="taskflows.reports.billSalesPeriodCustomerRport_TF_billSalesPeriodCustomerRport_TF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_billSalesPeriodCustomerReportPageDef"
+          path="fragments.reports.billSalesPeriodCustomerReportPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_educational_levels_TF_educational_levels_TF_RollbackPageDef"
+          path="taskflows.educational_levels_TF_educational_levels_TF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_educationallevelsPageDef"
+          path="fragments.educational.educationallevelsPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_subjectsPageDef" path="fragments.lookups.subjectsPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_educationalsubjectPageDef"
+          path="fragments.lookups.educationalsubjectPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_educational_subject_TF_educational_subject_TF_RollbackPageDef"
+          path="taskflows.educational_subject_TF_educational_subject_TF_RollbackPageDef"/>
+    <page id="com_abdo_adf_storeshop_view_subject_TF_subject_TF_RollbackPageDef"
+          path="taskflows.subject_TF_subject_TF_RollbackPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="StoreShopModuleDataControl" Package="com.abdo.adf.storeshop.model.appmodule"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="StoreShopModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

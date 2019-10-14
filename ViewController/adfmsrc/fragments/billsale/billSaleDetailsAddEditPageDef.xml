@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="billSaleDetailsAddEditPageDef"
+                Package="fragments.billsale">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BillSaleView1" RangeSize="25" DataControl="StoreShopModuleDataControl" id="BillSaleView1Iterator"/>
+    <iterator Binds="BillSaleDetailsView2" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="BillSaleDetailsView2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="BillSaleView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="BillSaleView1Iterator" StaticList="false" Uses="LOV_Customer" id="Customer"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="BillSaleView1Iterator" id="SaleDate">
+      <AttrNames>
+        <Item Value="SaleDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BillSaleView1Iterator" id="TotalPrice">
+      <AttrNames>
+        <Item Value="TotalPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BillSaleView1Iterator" id="Discount">
+      <AttrNames>
+        <Item Value="Discount"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="BillSaleDetailsView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <tree IterBinding="BillSaleDetailsView2Iterator" id="BillSaleDetailsView2">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.BillSaleDetailsView" Name="BillSaleDetailsView20">
+        <AttrNames>
+          <Item Value="ProductCategory"/>
+          <Item Value="Product"/>
+          <Item Value="Amount"/>
+          <Item Value="Price"/>
+          <Item Value="Discount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" InstanceName="StoreShopModuleDataControl" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action IterBinding="BillSaleDetailsView2Iterator" id="Delete"
+            InstanceName="StoreShopModuleDataControl.BillSaleDetailsView2" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <methodAction id="getAllAmountProduct" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="getAllAmountProduct" IsViewObjectMethod="true" DataControl="StoreShopModuleDataControl"
+                  InstanceName="data.StoreShopModuleDataControl.productsRoEx1"
+                  ReturnName="data.StoreShopModuleDataControl.methodResults.getAllAmountProduct_StoreShopModuleDataControl_productsRoEx1_getAllAmountProduct_result">
+      <NamedData NDName="productId" NDType="oracle.jbo.domain.Number"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

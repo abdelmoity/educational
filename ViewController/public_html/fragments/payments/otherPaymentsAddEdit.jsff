@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+                 <f:loadBundle basename="com.abdo.adf.storeshop.view.bundle.viewController" var="bundle"/>
+<af:panelBox text="#{bundle.OTHER_PAYMENTS_ADD_EDIT}" id="pb1" showDisclosure="false">
+    <f:facet name="toolbar">
+      <af:group id="g1">
+        <af:commandButton text="#{bundle.SAVE}" id="cb1" action="#{baseBean.save}"/>
+        <af:commandButton text="#{bundle.BACK}" id="cb2" action="back" immediate="true"/>
+      </af:group>
+    </f:facet>
+    <af:panelFormLayout id="pfl1">
+      <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}" disabled="true"
+                    required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
+                    maximumLength="#{bindings.Id.hints.precision}" shortDesc="#{bindings.Id.hints.tooltip}" id="it1">
+        <f:validator binding="#{bindings.Id.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+      </af:inputText>
+      <af:selectOneChoice value="#{bindings.PaymentType.inputValue}" label="#{bindings.PaymentType.label}"
+                          required="#{bindings.PaymentType.hints.mandatory}"
+                          shortDesc="#{bindings.PaymentType.hints.tooltip}" id="soc1">
+        <f:selectItems value="#{bindings.PaymentType.items}" id="si1"/>
+      </af:selectOneChoice>
+      <af:inputDate value="#{bindings.PaymentDate.inputValue}" label="#{bindings.PaymentDate.hints.label}"
+                    required="#{bindings.PaymentDate.hints.mandatory}"
+                    columns="#{bindings.PaymentDate.hints.displayWidth}"
+                    shortDesc="#{bindings.PaymentDate.hints.tooltip}" id="id1">
+        <f:validator binding="#{bindings.PaymentDate.validator}"/>
+        <af:convertDateTime pattern="#{bindings.PaymentDate.format}"/>
+      </af:inputDate>
+      <af:inputText value="#{bindings.Price.inputValue}" label="#{bindings.Price.hints.label}"
+                    required="#{bindings.Price.hints.mandatory}" columns="#{bindings.Price.hints.displayWidth}"
+                    maximumLength="#{bindings.Price.hints.precision}" shortDesc="#{bindings.Price.hints.tooltip}"
+                    id="it2">
+        <f:validator binding="#{bindings.Price.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.Price.format}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.Comments.inputValue}" label="#{bindings.Comments.hints.label}" rows="3" 
+                    required="#{bindings.Comments.hints.mandatory}" columns="60"
+                    maximumLength="#{bindings.Comments.hints.precision}" shortDesc="#{bindings.Comments.hints.tooltip}"
+                    id="it3">
+        <f:validator binding="#{bindings.Comments.validator}"/>
+      </af:inputText>
+    </af:panelFormLayout>
+  </af:panelBox>
+</ui:composition>

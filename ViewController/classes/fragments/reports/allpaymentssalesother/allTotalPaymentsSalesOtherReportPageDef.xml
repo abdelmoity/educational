@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36"
+                id="allTotalPaymentsSalesOtherReportPageDef" Package="fragments.reports.allpaymentssalesother">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variableUsage DataControl="StoreShopModuleDataControl"
+                     Binds="AllTotalPaymentsSalesOtherReport1.variablesMap.fromDate" Name="ExecuteWithParams_fromDate"
+                     IsQueriable="false"/>
+      <variableUsage DataControl="StoreShopModuleDataControl"
+                     Binds="AllTotalPaymentsSalesOtherReport1.variablesMap.toDate" Name="ExecuteWithParams_toDate"
+                     IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="AllTotalPaymentsSalesOtherReport1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="AllTotalPaymentsSalesOtherReport1Iterator"/>
+    <searchRegion Binds="AllTotalPaymentsSalesOtherReport1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="AllTotalPaymentsSalesOtherReport1Query"/>
+  </executables>
+  <bindings>
+    <action IterBinding="AllTotalPaymentsSalesOtherReport1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="fromDate" NDType="oracle.jbo.domain.Date" NDValue="${bindings.ExecuteWithParams_fromDate}"/>
+      <NamedData NDName="toDate" NDType="oracle.jbo.domain.Date" NDValue="${bindings.ExecuteWithParams_toDate}"/>
+    </action>
+    <attributeValues IterBinding="variables" id="fromDate">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_fromDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="toDate">
+      <AttrNames>
+        <Item Value="ExecuteWithParams_toDate"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="AllTotalPaymentsSalesOtherReport1Iterator" id="AllTotalPaymentsSalesOtherReport1">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.ro.AllTotalPaymentsSalesOtherReport"
+                      Name="AllTotalPaymentsSalesOtherReport10">
+        <AttrNames>
+          <Item Value="TotalPrice"/>
+          <Item Value="Type"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SystemRoleView"
+  Version="11.1.2.64.36"
+  SelectList="SystemRole.ID, 
+       SystemRole.NAME, 
+       SystemRole.CREATED_BY, 
+       SystemRole.CREATED_DATE, 
+       SystemRole.LAST_UPDATED_DATE, 
+       SystemRole.LAST_UPDATED_BY"
+  FromList="SYSTEM_ROLE SystemRole"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="SystemRole"
+    Entity="com.abdo.adf.storeshop.model.eo.SystemRole"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="SystemRole"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="SystemRole"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="SystemRole"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="SystemRole"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedDate"
+    EntityUsage="SystemRole"
+    AliasName="LAST_UPDATED_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="SystemRole"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewLinkAccessor
+    Name="EmployeesView"
+    ViewLink="com.abdo.adf.storeshop.model.vo.EmployeesR02Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="SysRoleTaskflowView"
+    ViewLink="com.abdo.adf.storeshop.model.vo.SysRoleTaskflowFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="SysUserView"
+    ViewLink="com.abdo.adf.storeshop.model.vo.SysUserFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

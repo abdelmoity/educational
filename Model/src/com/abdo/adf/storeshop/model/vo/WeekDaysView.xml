@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="WeekDaysView"
+  Version="11.1.2.64.36"
+  SelectList="WeekDays.ID, 
+       WeekDays.NAME"
+  FromList="WEEK_DAYS WeekDays"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="WeekDays"
+    Entity="com.abdo.adf.storeshop.model.eo.WeekDays"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="WeekDays"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="WeekDays"
+    AliasName="NAME"/>
+  <ViewLinkAccessor
+    Name="GroupAppointmentsView"
+    ViewLink="com.abdo.adf.storeshop.model.vo.GroupAppointmentsFk2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

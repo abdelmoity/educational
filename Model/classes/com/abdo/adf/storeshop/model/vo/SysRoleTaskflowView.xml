@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysRoleTaskflowView"
+  Version="11.1.2.64.36"
+  SelectList="SysRoleTaskflow.ID, 
+       SysRoleTaskflow.ROLE_ID, 
+       SysRoleTaskflow.TASKFLOW_ID, 
+       SysRoleTaskflow.CREATED_BY, 
+       SysRoleTaskflow.CREATED_DATE, 
+       SysRoleTaskflow.LAST_UPDATED_DATE, 
+       SysRoleTaskflow.LAST_UPDATED_BY"
+  FromList="SYS_ROLE_TASKFLOW SysRoleTaskflow"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="SysRoleTaskflow"
+    Entity="com.abdo.adf.storeshop.model.eo.SysRoleTaskflow"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="SysRoleTaskflow"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="RoleId"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="RoleId"
+    EntityUsage="SysRoleTaskflow"
+    AliasName="ROLE_ID"/>
+  <ViewAttribute
+    Name="TaskflowId"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TaskflowId"
+    EntityUsage="SysRoleTaskflow"
+    AliasName="TASKFLOW_ID"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="SysRoleTaskflow"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="SysRoleTaskflow"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedDate"
+    EntityUsage="SysRoleTaskflow"
+    AliasName="LAST_UPDATED_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="SysRoleTaskflow"
+    AliasName="LAST_UPDATED_BY"/>
+</ViewObject>

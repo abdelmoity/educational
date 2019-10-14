@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysRoleTaskflowFk2Link"
+  Version="11.1.2.64.36"
+  EntityAssociation="com.abdo.adf.storeshop.model.eo.SysRoleTaskflowFk2Assoc">
+  <ViewLinkDefEnd
+    Name="SysTaskflowsView"
+    Cardinality="1"
+    Source="true"
+    Owner="com.abdo.adf.storeshop.model.vo.SysTaskflowsView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SysTaskflowsView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.vo.SysTaskflowsView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="SysRoleTaskflowView"
+    Cardinality="-1"
+    Owner="com.abdo.adf.storeshop.model.vo.SysRoleTaskflowView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="SysRoleTaskflowView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.vo.SysRoleTaskflowView.TaskflowId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

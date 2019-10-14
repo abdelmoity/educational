@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="billSaleListPageDef"
+                Package="fragments.billsale">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BillSaleView1" RangeSize="25" DataControl="StoreShopModuleDataControl" id="BillSaleView1Iterator"/>
+    <searchRegion Binds="BillSaleView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="BillSaleView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="BillSaleView1Iterator" id="BillSaleView1">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.BillSaleView" Name="BillSaleView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Customer"/>
+          <Item Value="SaleDate"/>
+          <Item Value="TotalPrice"/>
+          <Item Value="Discount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" InstanceName="StoreShopModuleDataControl" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action IterBinding="BillSaleView1Iterator" id="Delete" InstanceName="StoreShopModuleDataControl.BillSaleView1"
+            DataControl="StoreShopModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

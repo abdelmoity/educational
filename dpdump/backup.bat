@@ -1,0 +1,6 @@
+@echo off 
+ren STORE_SHOP.DMP STORE_SHOP_OLD.DMP
+ren STORE_SHOP.log STORE_SHOP_OLD.log 
+expdp STORE_SHOP/STORE_SHOP schemas=STORE_SHOP dumpfile=STORE_SHOP.dmp logfile=STORE_SHOP.log
+del STORE_SHOP_OLD.DMP
+del STORE_SHOP_OLD.log

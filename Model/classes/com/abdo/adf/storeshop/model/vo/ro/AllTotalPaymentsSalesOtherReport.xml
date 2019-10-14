@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AllTotalPaymentsSalesOtherReport"
+  Version="11.1.2.64.36"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.abdo.adf.storeshop.model.vo.ro.AllTotalPaymentsSalesOtherReport_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="fromDate"
+    Kind="where"
+    Type="oracle.jbo.domain.Date">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.vo.ro.AllTotalPaymentsSalesOtherReport.fromDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="toDate"
+    Kind="where"
+    Type="oracle.jbo.domain.Date">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.vo.ro.AllTotalPaymentsSalesOtherReport.toDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <SQLQuery><![CDATA[select TOTAL_PRICE,TYPE,PAY from (
+select SUM(P.TOTAL_PRICE) TOTAL_PRICE , 'مشتريات' TYPE,0 PAY from PURCHASE_BILL P WHERE P.BILL_DATE BETWEEN nvl(:fromDate,(select min(BILL_DATE) from PURCHASE_BILL)) and nvl(:toDate,(select max(BILL_DATE) from PURCHASE_BILL)) 
+UNION
+select SUM(B.TOTAL_PRICE) TOTAL_PRICE , 'مبيعات' TYPE,1 PAY from BILL_SALE B WHERE B.SALE_DATE BETWEEN nvl(:fromDate,(select min(SALE_DATE) from BILL_SALE)) and nvl(:toDate,(select max(SALE_DATE) from BILL_SALE))
+UNION
+SELECT SUM(O.PRICE),PAYMENT_TYPE.NAME,0 PAY FROM OTHER_PAYMENTS O ,PAYMENTS_TYPES PAYMENT_TYPE WHERE O.PAYMENT_TYPE=PAYMENT_TYPE.ID
+AND O.PAYMENT_DATE BETWEEN nvl(:fromDate,(select min(PAYMENT_DATE) from OTHER_PAYMENTS)) and nvl(:toDate,(select max(PAYMENT_DATE) from OTHER_PAYMENTS)) GROUP BY PAYMENT_TYPE.NAME
+) where TOTAL_PRICE is not null ORDER BY PAY DESC]]></SQLQuery>
+  <ViewAttribute
+    Name="TotalPrice"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="TOTAL_PRICE"
+    Expression="TOTAL_PRICE"
+    SQLType="NUMERIC">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.vo.ro.AllTotalPaymentsSalesOtherReport.TotalPrice_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Type"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="70"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TYPE"
+    Expression="TYPE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="70"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.vo.ro.AllTotalPaymentsSalesOtherReport.Type_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Pay"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="PAY"
+    Expression="PAY"
+    SQLType="NUMERIC"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.abdo.adf.storeshop.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

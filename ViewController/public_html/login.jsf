@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="login.jsf" id="d1">
+       
+        <af:resource type="css" source="/assets/bootstrap-4.3.1/css/bootstrap.min.css"/>
+        <af:resource type="javascript" source="/assets/jquery/jquery-3.3.1.js"/>
+        <af:resource type="javascript" source="/assets/bootstrap-4.3.1/js/bootstrap.min.js"/>
+        <af:resource type="css" source="/assets/css/style.css"/>
+        <af:form id="f1">
+            <div class="container m-t-1" align="center" 
+                 style='border-color:Green; border-style:solid; padding:60px;vertical-align:middle;'>
+                <h1 class="loginTitleFont">Educational Center</h1>
+                <af:image source="/assets/img/logo.jpg" id="i1" shortDesc="login logo" styleClass="loginImg" inlineStyle="width:700px;height:200px;" />
+                <br/><br/>
+                 
+                <af:panelFormLayout id="pfl1" maxColumns="1" rows="3" styleClass="borderLogin">
+                    <af:inputText label="اسم المستخدم" id="it1" value="#{loginBean.userId}" required="true"
+                                  requiredMessageDetail="يجب إدخال اسم المستخدم" 
+                                  inlineStyle="font-family:arabicFont1;"/>
+                    <af:inputText label="كلمة المرور" id="it2" secret="true" value="#{loginBean.userPassword}"
+                                  required="true" requiredMessageDetail="يجب إدخال كلمة المرور"/>
+                    <af:panelGroupLayout id="g1" layout="horizontal">
+                       <af:commandButton text="تسجيل الدخول" id="cb1" action="#{loginBean.checkLogin}" />
+                       <af:spacer width="10px"/>
+                        <af:resetButton text="إعادة إدخال" id="rb1"/>
+                    </af:panelGroupLayout>
+                </af:panelFormLayout>
+            </div>
+            <!-- End Container Div -->
+            
+        </af:form>
+    </af:document>
+</f:view>

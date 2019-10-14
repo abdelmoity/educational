@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductsCategoryView"
+  Version="11.1.2.64.36"
+  SelectList="ProductsCategory.ID, 
+       ProductsCategory.NAME, 
+       ProductsCategory.CREATED_BY, 
+       ProductsCategory.CREATED_DATE, 
+       ProductsCategory.LAST_UPDATED_BY, 
+       ProductsCategory.LAST_UPDATED_DATE"
+  FromList="PRODUCTS_CATEGORY ProductsCategory"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="ProductsCategory"
+    Entity="com.abdo.adf.storeshop.model.eo.ProductsCategory"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="ProductsCategory"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="ProductsCategory"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="ProductsCategory"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="ProductsCategory"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="ProductsCategory"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedDate"
+    EntityUsage="ProductsCategory"
+    AliasName="LAST_UPDATED_DATE"/>
+  <ViewLinkAccessor
+    Name="ProductsTypeView"
+    ViewLink="com.abdo.adf.storeshop.model.vo.ProductsTypeFk3Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

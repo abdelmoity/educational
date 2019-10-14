@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="taskflows/educational_levels_TF.xml" id="educational_levels_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets"/>
+   <task-flow-descriptor path="taskflows/sales/salesTF.xml" id="salesTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets"/>
+   <task-flow-descriptor path="taskflows/security/usersTF.xml" id="usersTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets"/>
+   <task-flow-descriptor path="taskflows/subject_TF.xml" id="subject_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets"/>
+   <task-flow-descriptor path="taskflows/purchases/purchasesTF.xml" id="purchasesTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets"/>
+   <task-flow-descriptor path="taskflows/educational_subject_TF.xml" id="educational_subject_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets"/>
+   <task-flow-descriptor path="taskflows/reports/billSalesPeriodCustomerRport_TF.xml" id="billSalesPeriodCustomerRport_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets"/>
+   <task-flow-descriptor path="taskflows/reports/allProducts_TF.xml" id="allProducts_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets"/>
+   <task-flow-descriptor path="taskflows/group_student_TF.xml" id="group_student_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="taskflows/money_TF.xml" id="money_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="taskflows/main_TF.xml" id="main_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets"/>
+   <task-flow-descriptor path="META-INF/adfc-config.xml" id="" type="" uses-page-fragments="false" library-internal="false" train="false" page-type="facelets"/>
+   <task-flow-descriptor path="taskflows/lookups/paymentsTypesTF.xml" id="paymentsTypesTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="taskflows/student_TF.xml" id="student_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="taskflows/reports/allPaymentsSalesOther_TF.xml" id="allPaymentsSalesOther_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets"/>
+   <task-flow-descriptor path="taskflows/lookups/productsTypes_TF.xml" id="productsTypes_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="taskflows/group_appointment_TF.xml" id="group_appointment_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="taskflows/lookups/employees_TF.xml" id="employees_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="taskflows/groups_TF.xml" id="groups_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="taskflows/lookups/customers_TF.xml" id="customers_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="taskflows/test_student_TF.xml" id="test_student_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="taskflows/lookups/suppliers_TF.xml" id="suppliers_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="taskflows/tests_definition_TF.xml" id="tests_definition_TF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="unspecified"/>
+   <task-flow-descriptor path="taskflows/security/sysRoleTaskFlows.xml" id="sysRoleTaskFlows" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets"/>
+   <task-flow-descriptor path="taskflows/otherPaymentsTF.xml" id="otherPaymentsTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false" page-type="facelets"/>
+</task-flow-registry>

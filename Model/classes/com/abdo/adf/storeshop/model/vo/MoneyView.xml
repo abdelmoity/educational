@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MoneyView"
+  Version="11.1.2.64.36"
+  SelectList="Money.ID, 
+       Money.GROUP_STUDENT, 
+       Money.PAY_DATE, 
+       Money.MONEY, 
+       Money.REMAINING, 
+       Money.NOTES, 
+       Money.GROUP_ID"
+  FromList="MONEY Money"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Money"
+    Entity="com.abdo.adf.storeshop.model.eo.Money"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Money"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="GroupStudent"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GroupStudent"
+    EntityUsage="Money"
+    AliasName="GROUP_STUDENT"/>
+  <ViewAttribute
+    Name="PayDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PayDate"
+    EntityUsage="Money"
+    AliasName="PAY_DATE"/>
+  <ViewAttribute
+    Name="Money1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Money"
+    EntityUsage="Money"
+    AliasName="MONEY"/>
+  <ViewAttribute
+    Name="Remaining"
+    PrecisionRule="true"
+    EntityAttrName="Remaining"
+    EntityUsage="Money"
+    AliasName="REMAINING"/>
+  <ViewAttribute
+    Name="Notes"
+    PrecisionRule="true"
+    EntityAttrName="Notes"
+    EntityUsage="Money"
+    AliasName="NOTES"/>
+  <ViewAttribute
+    Name="GroupId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GroupId"
+    EntityUsage="Money"
+    AliasName="GROUP_ID"/>
+</ViewObject>

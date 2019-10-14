@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <f:loadBundle basename="com.abdo.adf.storeshop.view.bundle.viewController" var="bundle"/>
+    <af:panelBox text="#{bundle.BILL_SALE_ADD_EDIT}" id="pb1" showDisclosure="false">
+        <f:facet name="toolbar">
+            <af:group id="g1">
+                <af:commandButton text="#{bundle.SAVE}" id="cb1" action="#{baseBean.save}"/>
+                <af:commandButton text="#{bundle.BACK}" id="cb2" action="back" immediate="true"/>
+            </af:group>
+        </f:facet>
+        <af:panelTabbed id="pt1" styleClass="AFStretchWidth" inlineStyle="height:650px;">
+            <af:showDetailItem text="#{bundle.BILL_SALE}" id="sdi1" styleClass="AFStretchWidth">
+                <af:panelFormLayout id="pfl1">
+                    <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
+                                  required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
+                                  maximumLength="#{bindings.Id.hints.precision}"
+                                  shortDesc="#{bindings.Id.hints.tooltip}" id="it1">
+                        <f:validator binding="#{bindings.Id.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                    </af:inputText>
+                    <af:selectOneChoice value="#{bindings.Customer.inputValue}" label="#{bindings.Customer.label}"
+                                        required="#{bindings.Customer.hints.mandatory}"
+                                        shortDesc="#{bindings.Customer.hints.tooltip}" id="soc1">
+                        <f:selectItems value="#{bindings.Customer.items}" id="si1"/>
+                    </af:selectOneChoice>
+                    <af:inputDate value="#{bindings.SaleDate.inputValue}" label="#{bindings.SaleDate.hints.label}"
+                                  required="#{bindings.SaleDate.hints.mandatory}"
+                                  columns="#{bindings.SaleDate.hints.displayWidth}"
+                                  shortDesc="#{bindings.SaleDate.hints.tooltip}" id="id1">
+                        <f:validator binding="#{bindings.SaleDate.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.SaleDate.format}"/>
+                    </af:inputDate>
+                    <af:inputText value="#{bindings.TotalPrice.inputValue}" label="#{bindings.TotalPrice.hints.label}"
+                                  required="#{bindings.TotalPrice.hints.mandatory}" disabled="true"
+                                  columns="#{bindings.TotalPrice.hints.displayWidth}"
+                                  maximumLength="#{bindings.TotalPrice.hints.precision}"
+                                  shortDesc="#{bindings.TotalPrice.hints.tooltip}" id="it2">
+                        <f:validator binding="#{bindings.TotalPrice.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.TotalPrice.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.Discount.inputValue}" label="#{bindings.Discount.hints.label}"
+                                  required="#{bindings.Discount.hints.mandatory}" disabled="true"
+                                  columns="#{bindings.Discount.hints.displayWidth}"
+                                  maximumLength="#{bindings.Discount.hints.precision}"
+                                  shortDesc="#{bindings.Discount.hints.tooltip}" id="it3">
+                        <f:validator binding="#{bindings.Discount.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Discount.format}"/>
+                    </af:inputText>
+                </af:panelFormLayout>
+            </af:showDetailItem>
+            <af:showDetailItem text="#{bundle.RECEIPT_DETAILS}" id="sdi2" styleClass="AFStretchWidth"
+                               disabled="#{bindings.Id.inputValue==null}">
+                <af:panelGroupLayout id="pgl1" inlineStyle="text-align:center;" valign="middle" layout="horizontal"
+                                     halign="center">
+                    <af:commandButton actionListener="#{bindings.CreateInsert.execute}" text="#{bundle.ADD}"
+                                       id="cb4" icon="/assets/img/add 32.png"/>
+                </af:panelGroupLayout>
+                <af:table value="#{bindings.BillSaleDetailsView2.collectionModel}" var="row"
+                          rows="#{bindings.BillSaleDetailsView2.rangeSize}"
+                          emptyText="#{bindings.BillSaleDetailsView2.viewable ? bundle.NO_DATA_TO_DISPLAY : 'Access Denied.'}"
+                          fetchSize="#{bindings.BillSaleDetailsView2.rangeSize}" rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.BillSaleDetailsView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.BillSaleDetailsView2.collectionModel.makeCurrent}"
+                          rowSelection="single" id="t1" partialTriggers="::cb4" styleClass="AFStretchWidth"
+                          inlineStyle="height:500px;">
+                    <af:column sortProperty="#{bindings.BillSaleDetailsView2.hints.ProductCategory.name}"
+                               sortable="true" headerText="#{bindings.BillSaleDetailsView2.hints.ProductCategory.label}"
+                               id="c1">
+                        <af:selectOneChoice value="#{row.bindings.ProductCategory.inputValue}"
+                                            label="#{row.bindings.ProductCategory.label}"
+                                            required="#{bindings.BillSaleDetailsView2.hints.ProductCategory.mandatory}"
+                                            shortDesc="#{bindings.BillSaleDetailsView2.hints.ProductCategory.tooltip}"
+                                            id="soc2" autoSubmit="true">
+                            <f:selectItems value="#{row.bindings.ProductCategory.items}" id="si2"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.BillSaleDetailsView2.hints.Product.name}" sortable="true"
+                               headerText="#{bindings.BillSaleDetailsView2.hints.Product.label}" id="c2">
+                        <af:selectOneChoice value="#{row.bindings.Product.inputValue}"
+                                            label="#{row.bindings.Product.label}"
+                                            required="#{bindings.BillSaleDetailsView2.hints.Product.mandatory}"
+                                            shortDesc="#{bindings.BillSaleDetailsView2.hints.Product.tooltip}"
+                                            id="soc3" autoSubmit="true">
+                            <f:selectItems value="#{row.bindings.Product.items}" id="si3"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.BillSaleDetailsView2.hints.Amount.name}" sortable="true" width="30"
+                               headerText="#{bindings.BillSaleDetailsView2.hints.Amount.label}" id="c3">
+                        <af:inputText value="#{row.bindings.Amount.inputValue}" autoSubmit="true"
+                                      label="#{bindings.BillSaleDetailsView2.hints.Amount.label}"
+                                      required="#{bindings.BillSaleDetailsView2.hints.Amount.mandatory}"
+                                      columns="#{bindings.BillSaleDetailsView2.hints.Amount.displayWidth}"
+                                      maximumLength="#{bindings.BillSaleDetailsView2.hints.Amount.precision}"
+                                      shortDesc="#{bindings.BillSaleDetailsView2.hints.Amount.tooltip}" id="it4"
+                                      valueChangeListener="#{pageFlowScope.billSale.amountChangeListener}">
+                            <f:validator binding="#{row.bindings.Amount.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.BillSaleDetailsView2.hints.Amount.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.BillSaleDetailsView2.hints.Price.name}" sortable="true" width="30"
+                               headerText="#{bindings.BillSaleDetailsView2.hints.Price.label}" id="c4">
+                        <af:inputText value="#{row.bindings.Price.inputValue}" partialTriggers="it4"
+                                      label="#{bindings.BillSaleDetailsView2.hints.Price.label}"
+                                      required="#{bindings.BillSaleDetailsView2.hints.Price.mandatory}"
+                                      columns="#{bindings.BillSaleDetailsView2.hints.Price.displayWidth}"
+                                      maximumLength="#{bindings.BillSaleDetailsView2.hints.Price.precision}"
+                                      shortDesc="#{bindings.BillSaleDetailsView2.hints.Price.tooltip}" id="it5">
+                            <f:validator binding="#{row.bindings.Price.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.BillSaleDetailsView2.hints.Price.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.BillSaleDetailsView2.hints.Discount.name}" sortable="true" width="30"
+                               headerText="#{bindings.BillSaleDetailsView2.hints.Discount.label}" id="c5">
+                        <af:inputText value="#{row.bindings.Discount.inputValue}"
+                                      label="#{bindings.BillSaleDetailsView2.hints.Discount.label}"
+                                      required="#{bindings.BillSaleDetailsView2.hints.Discount.mandatory}"
+                                      columns="#{bindings.BillSaleDetailsView2.hints.Discount.displayWidth}"
+                                      maximumLength="#{bindings.BillSaleDetailsView2.hints.Discount.precision}"
+                                      shortDesc="#{bindings.BillSaleDetailsView2.hints.Discount.tooltip}" id="it6">
+                            <f:validator binding="#{row.bindings.Discount.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.BillSaleDetailsView2.hints.Discount.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column id="deleteId" width="25">
+                        <af:commandImageLink id="deleteBtnId" shortDesc="delete" icon="/assets/img/delete-24.png">
+                            <af:showPopupBehavior popupId="::p1" triggerType="click"/>
+                        </af:commandImageLink>
+                    </af:column>
+                </af:table>
+            </af:showDetailItem>
+        </af:panelTabbed>
+        <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+            <af:dialog id="d1" title="#{bundle.DELETE_RECORDS}" type="okCancel"
+                       dialogListener="#{baseBean.delPopUpListener}"></af:dialog>
+        </af:popup>
+    </af:panelBox>
+</ui:composition>
+    

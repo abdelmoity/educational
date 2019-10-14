@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="customersListPageDef"
+                Package="fragments.lookups.customers">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CustomersView1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="CustomersView1Iterator"/>
+    <searchRegion Binds="CustomersView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CustomersView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CustomersView1Iterator" id="CustomersView1">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.CustomersView" Name="CustomersView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="Email"/>
+          <Item Value="Address"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" InstanceName="StoreShopModuleDataControl" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action IterBinding="CustomersView1Iterator" id="Delete" InstanceName="StoreShopModuleDataControl.CustomersView1"
+            DataControl="StoreShopModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

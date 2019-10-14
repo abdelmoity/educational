@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="productstypesAddEditPageDef"
+                Package="fragments.lookups.productstype">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProductsTypeView2" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="ProductsTypeView2Iterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="ProductsTypeView2Iterator" StaticList="false" Uses="LOV_Category" id="Category"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ProductsTypeView2Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsTypeView2Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsTypeView2Iterator" id="PurchasePrice">
+      <AttrNames>
+        <Item Value="PurchasePrice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsTypeView2Iterator" id="SalePrice">
+      <AttrNames>
+        <Item Value="SalePrice"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" InstanceName="StoreShopModuleDataControl" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action IterBinding="ProductsTypeView2Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

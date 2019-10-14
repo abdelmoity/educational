@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductsTypeView"
+  Version="11.1.2.64.36"
+  SelectList="ProductsType.ID, 
+       ProductsType.NAME, 
+       ProductsType.CREATED_BY, 
+       ProductsType.CREATED_DATE, 
+       ProductsType.LAST_UPDATED_BY, 
+       ProductsType.LAST_UPDATED_DATE, 
+       ProductsType.CATEGORY, 
+       ProductsType.PURCHASE_PRICE, 
+       ProductsType.SALE_PRICE"
+  FromList="PRODUCTS_TYPE ProductsType"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <ViewAccessor
+    Name="ProductsCategoryLOV1"
+    ViewObjectName="com.abdo.adf.storeshop.model.vo.ro.lov.ProductsCategoryLOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Category"
+    ListVOName="ProductsCategoryLOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Category"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="ProductsType"
+    Entity="com.abdo.adf.storeshop.model.eo.ProductsType"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="ProductsType"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="ProductsType"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="ProductsType"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="ProductsType"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="ProductsType"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedDate"
+    EntityUsage="ProductsType"
+    AliasName="LAST_UPDATED_DATE"/>
+  <ViewAttribute
+    Name="Category"
+    PrecisionRule="true"
+    EntityAttrName="Category"
+    EntityUsage="ProductsType"
+    AliasName="CATEGORY"
+    LOVName="LOV_Category">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PurchasePrice"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PurchasePrice"
+    EntityUsage="ProductsType"
+    AliasName="PURCHASE_PRICE"/>
+  <ViewAttribute
+    Name="SalePrice"
+    PrecisionRule="true"
+    EntityAttrName="SalePrice"
+    EntityUsage="ProductsType"
+    AliasName="SALE_PRICE"/>
+</ViewObject>

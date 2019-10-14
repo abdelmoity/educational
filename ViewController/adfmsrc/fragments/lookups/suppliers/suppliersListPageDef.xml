@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="suppliersListPageDef"
+                Package="fragments.lookups.suppliers">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SuppliersView1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="SuppliersView1Iterator"/>
+    <searchRegion Binds="SuppliersView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="SuppliersView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SuppliersView1Iterator" id="SuppliersView1">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.SuppliersView" Name="SuppliersView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="CompanyName"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="Address"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SuppliersView1Iterator" id="Delete" InstanceName="StoreShopModuleDataControl.SuppliersView1"
+            DataControl="StoreShopModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" InstanceName="StoreShopModuleDataControl" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>

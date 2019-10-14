@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductsType"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="PRODUCTS_TYPE"
+  AliasName="ProductsType"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="com.abdo.adf.storeshop.model.eo.ProductsTypeImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PRODUCTS_TYPE"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.ProductsType.Id_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="70"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PRODUCTS_TYPE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.ProductsType.Name_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PRODUCTS_TYPE"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="PRODUCTS_TYPE"/>
+  <Attribute
+    Name="LastUpdatedBy"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PRODUCTS_TYPE"/>
+  <Attribute
+    Name="LastUpdatedDate"
+    ColumnName="LAST_UPDATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="PRODUCTS_TYPE"/>
+  <Attribute
+    Name="Category"
+    ColumnName="CATEGORY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PRODUCTS_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.ProductsType.Category_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="PurchasePrice"
+    IsNotNull="true"
+    ColumnName="PURCHASE_PRICE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PRODUCTS_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.ProductsType.PurchasePrice_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="SalePrice"
+    ColumnName="SALE_PRICE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PRODUCTS_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.ProductsType.SalePrice_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="ProductsCategory"
+    Association="com.abdo.adf.storeshop.model.eo.ProductsTypeFk3Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.ProductsTypeFk3Assoc.ProductsCategory"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.ProductsTypeFk3Assoc.ProductsType"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SysUser"
+    Association="com.abdo.adf.storeshop.model.eo.ProductsTypeFk2Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.ProductsTypeFk2Assoc.SysUser"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.ProductsTypeFk2Assoc.ProductsType"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SysUser1"
+    Association="com.abdo.adf.storeshop.model.eo.ProductsTypeFk1Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.ProductsTypeFk1Assoc.SysUser1"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.ProductsTypeFk1Assoc.ProductsType1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="ProductsTypePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRODUCTS_TYPE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.ProductsType.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductsTypeUk1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PRODUCTS_TYPE_UK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.ProductsType.Name"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductsTypeFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_USER_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PRODUCTS_TYPE_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.ProductsType.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductsTypeFk2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_USER_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PRODUCTS_TYPE_FK2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.ProductsType.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProductsTypeFk3">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRODUCTS_CATEGORY_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PRODUCTS_TYPE_FK3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.ProductsType.Category"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.abdo.adf.storeshop.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

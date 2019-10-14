@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EducationalSubject"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="EDUCATIONAL_SUBJECT"
+  AliasName="EducationalSubject"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="com.abdo.adf.storeshop.model.eo.EducationalSubjectImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EDUCATIONAL_SUBJECT"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.EducationalSubject.Id_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="EducationalLevel"
+    IsNotNull="true"
+    ColumnName="EDUCATIONAL_LEVEL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EDUCATIONAL_SUBJECT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.EducationalSubject.EducationalLevel_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Subject"
+    IsNotNull="true"
+    ColumnName="SUBJECT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EDUCATIONAL_SUBJECT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.EducationalSubject.Subject_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="100"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="EDUCATIONAL_SUBJECT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.EducationalSubject.Description_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Price"
+    IsNotNull="true"
+    ColumnName="PRICE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="EDUCATIONAL_SUBJECT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.EducationalSubject.Price_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="EducationalLevel1"
+    Association="com.abdo.adf.storeshop.model.eo.EducationalSubjectFk1Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.EducationalSubjectFk1Assoc.EducationalLevel1"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.EducationalSubjectFk1Assoc.EducationalSubject"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Subject1"
+    Association="com.abdo.adf.storeshop.model.eo.EducationalSubjectFk2Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.EducationalSubjectFk2Assoc.Subject1"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.EducationalSubjectFk2Assoc.EducationalSubject"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="EducationalSubjectPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EDUCATIONAL_SUBJECT_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.EducationalSubject.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EducationalSubjectFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="EDUCATIONAL_LEVEL_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EDUCATIONAL_SUBJECT_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.EducationalSubject.EducationalLevel"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="EducationalSubjectFk2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SUBJECT_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="EDUCATIONAL_SUBJECT_FK2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.EducationalSubject.Subject"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.abdo.adf.storeshop.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

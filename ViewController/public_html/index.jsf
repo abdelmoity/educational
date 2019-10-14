@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="index.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/storeShopTemplate.jsf" id="pt1" value="#{bindings.ptb1}">
+            
+                <f:facet name="menuBarContent">
+                    <af:menuBar id="pt_mb1" inlineStyle="height:35px;">
+                        <!-- main MenuItem-->
+                        <af:commandMenuItem id="mainMenuItemId" styleClass="arabicFont2" immediate="true"
+                                              icon="/assets/img/home.png"
+                                            actionListener="#{mainBean.navigateDynamicTaskFlow}">
+                            <f:attribute name="taskFlowUrl" value="/taskflows/main_TF.xml#main_TF"/>
+                        </af:commandMenuItem>
+                        <!-- other -->
+                        <af:panelGroupLayout id="menuesGrpId" layout="horizontal" valign="bottom">
+                        <af:forEach items="#{bindings.SysTaskFlowParent2.children}" var="parent">
+                            <af:menu text="#{parent.TaskflowName}" id="pt_m1" styleClass="arabicFont1">
+                                <af:iterator id="pt_i21" value="#{parent.SysTaskFlowChild}" var="child">
+                                    <af:commandMenuItem text="#{child.TaskflowName}" id="pt_cmi1"
+                                                        styleClass="arabicFont2"
+                                                        actionListener="#{mainBean.navigateDynamicTaskFlow}"
+                                                        immediate="true">
+                                        <f:attribute name="taskFlowUrl" value="#{child.TaskFlowUrl}"/>
+                                    </af:commandMenuItem>
+                                </af:iterator>
+                            </af:menu>
+                        </af:forEach>
+                        </af:panelGroupLayout>
+                    </af:menuBar>
+                </f:facet>
+                <f:facet name="mainContent">
+                    <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"
+                    binding="#{mainBean.taskFlowRegionBinding}"/>
+                </f:facet>
+                
+            </af:pageTemplate>
+               
+        </af:form>
+    </af:document>
+</f:view>

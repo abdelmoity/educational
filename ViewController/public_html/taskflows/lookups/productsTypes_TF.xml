@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="productsTypes_TF">
+    <default-activity>Rollback</default-activity>
+    <managed-bean id="__3">
+      <managed-bean-name>productsType</managed-bean-name>
+      <managed-bean-class>com.abdo.adf.storeshop.view.beans.lookups.ProductsType</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <method-call id="Rollback">
+      <method>#{bindings.Rollback.execute}</method>
+      <outcome>
+        <fixed-outcome>Rollback</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="productstypes">
+      <page>/fragments/lookups/productstype/productstypes.jsff</page>
+    </view>
+    <view id="productstypesAddEdit">
+      <page>/fragments/lookups/productstype/productstypesAddEdit.jsff</page>
+    </view>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome>
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>Rollback</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>Rollback</from-outcome>
+        <to-activity-id>productstypes</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>productstypes</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>add</from-outcome>
+        <to-activity-id>CreateInsert</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome>edit</from-outcome>
+        <to-activity-id>productstypesAddEdit</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>CreateInsert</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>CreateInsert</from-outcome>
+        <to-activity-id>productstypesAddEdit</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>productstypesAddEdit</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>Rollback</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

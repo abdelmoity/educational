@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmployeesR02Assoc"
+  Version="11.1.2.64.36">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="SystemRole"
+    Cardinality="1"
+    Source="true"
+    Owner="com.abdo.adf.storeshop.model.eo.SystemRole">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="SystemRole"/>
+      <Attr Name="_foreignKey" Value="com.abdo.adf.storeshop.model.eo.SystemRole.SystemRolePk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.SystemRole.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Employees"
+    Cardinality="-1"
+    Owner="com.abdo.adf.storeshop.model.eo.Employees">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Employees"/>
+      <Attr Name="_foreignKey" Value="com.abdo.adf.storeshop.model.eo.Employees.EmployeesR02"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.Employees.CreatedBy"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

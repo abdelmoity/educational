@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36"
+                id="otherPaymentsTF_otherPaymentsTF_CreateInsertPageDef" Package="taskflows" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="OtherPaymentsView1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="OtherPaymentsView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="OtherPaymentsView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

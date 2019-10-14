@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="productstypesPageDef"
+                Package="fragments.lookups.productstype">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProductsCategoryView1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="ProductsCategoryView1Iterator" ChangeEventPolicy="ppr"/>
+    <iterator Binds="ProductsTypeView2" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="ProductsTypeView2Iterator" ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="ProductsTypeView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ProductsTypeView2Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ProductsCategoryView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProductsCategoryView1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ProductsCategoryView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ProductsCategoryView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ProductsCategoryView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ProductsCategoryView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action id="Commit" InstanceName="StoreShopModuleDataControl" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="StoreShopModuleDataControl"/>
+    <action IterBinding="ProductsCategoryView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ProductsCategoryView1Iterator" id="Delete"
+            InstanceName="StoreShopModuleDataControl.ProductsCategoryView1" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="ProductsTypeView2Iterator" id="ProductsTypeView2">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.ProductsTypeView" Name="ProductsTypeView20">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Category"/>
+          <Item Value="PurchasePrice"/>
+          <Item Value="SalePrice"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ProductsTypeView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ProductsTypeView2Iterator" id="Delete1"
+            InstanceName="StoreShopModuleDataControl.ProductsTypeView2" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="ProductsTypeView2Iterator" id="ProductsTypeView21">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.ProductsTypeView" Name="ProductsTypeView210">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Category"/>
+          <Item Value="PurchasePrice"/>
+          <Item Value="SalePrice"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

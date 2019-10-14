@@ -1,0 +1,37 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">Rollback</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Rollback&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">235.53711</property>
+      <property
+         name="x">267.5</property>
+   </MethodCall>
+   <View
+      id="View3">
+      <property
+         name="activityId">billSalesPeriodCustomerReport</property>
+      <property
+         name="page">/fragments/reports/billSalesPeriodCustomerReport.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>billSalesPeriodCustomerReport&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">207.07422</property>
+      <property
+         name="x">637.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+</SDM>

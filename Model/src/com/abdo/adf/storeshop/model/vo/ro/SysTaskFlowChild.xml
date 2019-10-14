@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SysTaskFlowChild"
+  Version="11.1.2.64.36"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.abdo.adf.storeshop.model.vo.ro.SysTaskFlowChild_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="roleId"
+    Kind="where"
+    Type="java.lang.String">
+    <TransientExpression><![CDATA[adf.context.sessionScope.roleId]]></TransientExpression>
+  </Variable>
+  <SQLQuery><![CDATA[SELECT SysTaskflows.ID, 
+       SysTaskflows.TASKFLOW_NAME, 
+       SysTaskflows.PARENT, 
+       SysTaskflows.TASK_FLOW_URL
+FROM SYS_TASKFLOWS SysTaskflows,SYS_ROLE_TASKFLOW ROLE_TASKFLOW
+WHERE ROLE_TASKFLOW.TASKFLOW_ID = SYSTASKFLOWS.ID AND ROLE_TASKFLOW.ROLE_ID=:roleId
+AND SysTaskflows.PARENT is not null]]></SQLQuery>
+  <ViewAttribute
+    Name="Id"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ID"
+    Expression="ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TaskflowName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TASKFLOW_NAME"
+    Expression="TASKFLOW_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Parent"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="PARENT"
+    Expression="PARENT"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TaskFlowUrl"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TASK_FLOW_URL"
+    Expression="TASK_FLOW_URL"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.abdo.adf.storeshop.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

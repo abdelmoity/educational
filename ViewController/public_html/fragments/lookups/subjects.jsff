@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+<f:loadBundle basename="com.abdo.adf.storeshop.view.bundle.viewController" var="bundle"/>
+  <af:panelBox text="#{bundle.SUBJECTS}" id="pb1" showDisclosure="false" >
+    <f:facet name="toolbar">
+      <af:group id="g1">
+        <af:commandButton actionListener="#{bindings.CreateInsert.execute}" text="#{bundle.ADD}"  id="cb1"/>
+        <af:commandButton action="#{baseBean.save}" text="#{bundle.SAVE}" id="cb2"/>
+      </af:group>
+    </f:facet>
+    <af:table value="#{bindings.SubjectView1.collectionModel}" var="row" rows="#{bindings.SubjectView1.rangeSize}"
+              emptyText="#{bindings.SubjectView1.viewable ? bundle.NO_DATA_TO_DISPLAY : 'Access Denied.'}"
+              fetchSize="#{bindings.SubjectView1.rangeSize}" rowBandingInterval="0"
+              filterModel="#{bindings.SubjectView1Query.queryDescriptor}" styleClass="AFStretchWidth" inlineStyle="height:500px;"
+              queryListener="#{bindings.SubjectView1Query.processQuery}" filterVisible="true" varStatus="vs"
+              selectedRowKeys="#{bindings.SubjectView1.collectionModel.selectedRow}"
+              selectionListener="#{bindings.SubjectView1.collectionModel.makeCurrent}" rowSelection="single" id="t1"
+              partialTriggers="::cb1">
+      <af:column sortProperty="#{bindings.SubjectView1.hints.Id.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.SubjectView1.hints.Id.label}" id="c1" width="50">
+        <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.SubjectView1.hints.Id.label}"
+                      required="#{bindings.SubjectView1.hints.Id.mandatory}"
+                      columns="#{bindings.SubjectView1.hints.Id.displayWidth}"
+                      maximumLength="#{bindings.SubjectView1.hints.Id.precision}"
+                      shortDesc="#{bindings.SubjectView1.hints.Id.tooltip}" id="it1">
+          <f:validator binding="#{row.bindings.Id.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.SubjectView1.hints.Id.format}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.SubjectView1.hints.Name.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.SubjectView1.hints.Name.label}" id="c2">
+        <af:inputText value="#{row.bindings.Name.inputValue}" label="#{bindings.SubjectView1.hints.Name.label}"
+                      required="#{bindings.SubjectView1.hints.Name.mandatory}"
+                      columns="#{bindings.SubjectView1.hints.Name.displayWidth}"
+                      maximumLength="#{bindings.SubjectView1.hints.Name.precision}"
+                      shortDesc="#{bindings.SubjectView1.hints.Name.tooltip}" id="it2">
+          <f:validator binding="#{row.bindings.Name.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.SubjectView1.hints.Description.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.SubjectView1.hints.Description.label}" id="c3">
+        <af:inputText value="#{row.bindings.Description.inputValue}"
+                      label="#{bindings.SubjectView1.hints.Description.label}"
+                      required="#{bindings.SubjectView1.hints.Description.mandatory}"
+                      columns="#{bindings.SubjectView1.hints.Description.displayWidth}"
+                      maximumLength="#{bindings.SubjectView1.hints.Description.precision}"
+                      shortDesc="#{bindings.SubjectView1.hints.Description.tooltip}" id="it3">
+          <f:validator binding="#{row.bindings.Description.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column id="deleteId" width="50">
+        <af:commandImageLink id="deleteBtnId" shortDesc="delete" icon="/assets/img/delete-24.png">
+          <af:showPopupBehavior popupId="::p1" triggerType="click"/>
+        </af:commandImageLink>
+      </af:column>
+    </af:table>
+  </af:panelBox>
+  <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+    <af:dialog id="d1" title="#{bundle.DELETE_RECORDS}" type="okCancel"
+               dialogListener="#{baseBean.delPopUpListener}">
+    </af:dialog>
+  </af:popup>
+</ui:composition>

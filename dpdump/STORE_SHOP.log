@@ -1,0 +1,47 @@
+;;; 
+Export: Release 11.2.0.2.0 - Production on الجمعة اغسطس 9 01:11:42 2019
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+Starting "STORE_SHOP"."SYS_EXPORT_SCHEMA_01":  STORE_SHOP/******** schemas=STORE_SHOP dumpfile=STORE_SHOP.dmp logfile=STORE_SHOP.log 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 1.187 MB
+Processing object type SCHEMA_EXPORT/USER
+Processing object type SCHEMA_EXPORT/SYSTEM_GRANT
+Processing object type SCHEMA_EXPORT/ROLE_GRANT
+Processing object type SCHEMA_EXPORT/DEFAULT_ROLE
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/SEQUENCE/SEQUENCE
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/COMMENT
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/STATISTICS/TABLE_STATISTICS
+. . exported "STORE_SHOP"."PS_TXN"                       78.57 KB       7 rows
+. . exported "STORE_SHOP"."BILL_SALE"                    8.328 KB       5 rows
+. . exported "STORE_SHOP"."BILL_SALE_DETAILS"            9.281 KB       6 rows
+. . exported "STORE_SHOP"."CUSTOMERS"                    8.484 KB       3 rows
+. . exported "STORE_SHOP"."OTHER_PAYMENTS"               8.367 KB       4 rows
+. . exported "STORE_SHOP"."PAYMENTS_TYPES"               7.132 KB       3 rows
+. . exported "STORE_SHOP"."PRODUCTS_CATEGORY"            7.156 KB       3 rows
+. . exported "STORE_SHOP"."PRODUCT_STATUS"               5.460 KB       3 rows
+. . exported "STORE_SHOP"."PRODUCTS_TYPE"                8.523 KB       6 rows
+. . exported "STORE_SHOP"."PROJECT_COMPANY_DATA"         7.085 KB       1 rows
+. . exported "STORE_SHOP"."PURCHASE_BILL"                8.289 KB       2 rows
+. . exported "STORE_SHOP"."PURCHASE_BILL_DETAILS"        9.281 KB       6 rows
+. . exported "STORE_SHOP"."SUPPLIERS"                        8 KB       2 rows
+. . exported "STORE_SHOP"."SYS_ROLE_TASKFLOW"            7.640 KB      17 rows
+. . exported "STORE_SHOP"."SYS_TASKFLOWS"                10.98 KB      22 rows
+. . exported "STORE_SHOP"."SYSTEM_ROLE"                  7.062 KB       2 rows
+. . exported "STORE_SHOP"."SYS_USER"                     8.679 KB       1 rows
+. . exported "STORE_SHOP"."EMPLOYEES"                        0 KB       0 rows
+. . exported "STORE_SHOP"."PRODUCTS"                         0 KB       0 rows
+Master table "STORE_SHOP"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for STORE_SHOP.SYS_EXPORT_SCHEMA_01 is:
+  E:\ORACLE\APP\ORACLE\ADMIN\XE\DPDUMP\STORE_SHOP.DMP
+Job "STORE_SHOP"."SYS_EXPORT_SCHEMA_01" successfully completed at 01:12:23

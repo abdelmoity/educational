@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PurchaseBillDetails"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="PURCHASE_BILL_DETAILS"
+  AliasName="PurchaseBillDetails"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="com.abdo.adf.storeshop.model.eo.PurchaseBillDetailsImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PURCHASE_BILL_DETAILS"
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.PurchaseBillDetails.Id_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="PurchaseBill"
+    IsNotNull="true"
+    ColumnName="PURCHASE_BILL"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PURCHASE_BILL_DETAILS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.PurchaseBillDetails.PurchaseBill_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Product"
+    ColumnName="PRODUCT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PURCHASE_BILL_DETAILS"
+    IsNotNull="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.PurchaseBillDetails.Product_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PURCHASE_BILL_DETAILS"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="PURCHASE_BILL_DETAILS"/>
+  <Attribute
+    Name="LastUpdatedBy"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PURCHASE_BILL_DETAILS"/>
+  <Attribute
+    Name="LastUpdatedDate"
+    ColumnName="LAST_UPDATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="DATE"
+    TableName="PURCHASE_BILL_DETAILS"/>
+  <Attribute
+    Name="Price"
+    ColumnName="PRICE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PURCHASE_BILL_DETAILS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.PurchaseBillDetails.Price_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="ProductCategory"
+    ColumnName="PRODUCT_CATEGORY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PURCHASE_BILL_DETAILS"
+    IsNotNull="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.PurchaseBillDetails.ProductCategory_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Amount"
+    ColumnName="AMOUNT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PURCHASE_BILL_DETAILS"
+    IsNotNull="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.PurchaseBillDetails.Amount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute
+    Name="Discount"
+    ColumnName="DISCOUNT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PURCHASE_BILL_DETAILS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.abdo.adf.storeshop.model.eo.PurchaseBillDetails.Discount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute
+    Name="BillSaleDetails"
+    Association="com.abdo.adf.storeshop.model.eo.BillSaleDetailsFk1Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.BillSaleDetailsFk1Assoc.BillSaleDetails"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.BillSaleDetailsFk1Assoc.PurchaseBillDetails"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="PurchaseBill1"
+    Association="com.abdo.adf.storeshop.model.eo.PurchaseBillDetailsFk1Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.PurchaseBillDetailsFk1Assoc.PurchaseBill1"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.PurchaseBillDetailsFk1Assoc.PurchaseBillDetails"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SysUser"
+    Association="com.abdo.adf.storeshop.model.eo.PurchaseBillDetailsFk3Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.PurchaseBillDetailsFk3Assoc.SysUser"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.PurchaseBillDetailsFk3Assoc.PurchaseBillDetails"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SysUser1"
+    Association="com.abdo.adf.storeshop.model.eo.PurchaseBillDetailsFk2Assoc"
+    AssociationEnd="com.abdo.adf.storeshop.model.eo.PurchaseBillDetailsFk2Assoc.SysUser1"
+    AssociationOtherEnd="com.abdo.adf.storeshop.model.eo.PurchaseBillDetailsFk2Assoc.PurchaseBillDetails1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PurchaseBillDetailsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PURCHASE_BILL_DETAILS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.PurchaseBillDetails.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PurchaseBillDetailsFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PURCHASE_BILL_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PURCHASE_BILL_DETAILS_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.PurchaseBillDetails.PurchaseBill"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PurchaseBillDetailsFk2">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_USER_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PURCHASE_BILL_DETAILS_FK2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.PurchaseBillDetails.CreatedBy"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="PurchaseBillDetailsFk3">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SYS_USER_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PURCHASE_BILL_DETAILS_FK3"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.abdo.adf.storeshop.model.eo.PurchaseBillDetails.LastUpdatedBy"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.abdo.adf.storeshop.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

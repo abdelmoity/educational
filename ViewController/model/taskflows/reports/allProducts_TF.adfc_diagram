@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <MethodCall
+      id="MethodCall2">
+      <property
+         name="activityId">Rollback</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Rollback&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">143.14941</property>
+      <property
+         name="x">174.5</property>
+   </MethodCall>
+   <View
+      id="View3">
+      <property
+         name="activityId">allproductsReport</property>
+      <property
+         name="page">/fragments/reports/allproducts/allproductsReport.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>allproductsReport&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">124.5459</property>
+      <property
+         name="x">389.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall2"
+      to="View3">
+      <property
+         name="fromOutcome">Rollback</property>
+      <property
+         name="sdm:polyPoints">R50,215.5,142.79883,348.0,124.19531,L50</property>
+   </ControlFlowCase>
+</SDM>

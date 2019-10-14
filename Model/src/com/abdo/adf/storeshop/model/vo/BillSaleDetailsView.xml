@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BillSaleDetailsView"
+  Version="11.1.2.64.36"
+  SelectList="BillSaleDetails.ID, 
+       BillSaleDetails.PRICE, 
+       BillSaleDetails.DISCOUNT, 
+       BillSaleDetails.CREATED_BY, 
+       BillSaleDetails.CREATED_DATE, 
+       BillSaleDetails.LAST_UPDATED_DATE, 
+       BillSaleDetails.LAST_UPDATED_BY, 
+       BillSaleDetails.BILL_SALE_ID, 
+       BillSaleDetails.PRODUCT, 
+       BillSaleDetails.PRODUCT_CATEGORY, 
+       BillSaleDetails.AMOUNT"
+  FromList="BILL_SALE_DETAILS BillSaleDetails"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="com.abdo.adf.storeshop.model.vo.BillSaleDetailsViewRowImpl"
+  ComponentClass="com.abdo.adf.storeshop.model.vo.BillSaleDetailsViewImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="ProductsCategoryLOV1"
+    ViewObjectName="com.abdo.adf.storeshop.model.vo.ro.lov.ProductsCategoryLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ProductsTypesLov1"
+    ViewObjectName="com.abdo.adf.storeshop.model.vo.ro.lov.ProductsTypesLov">
+    <ParameterMap>
+      <PIMap Variable="category">
+        <TransientExpression><![CDATA[ProductCategory]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_ProductCategory"
+    ListVOName="ProductsCategoryLOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ProductCategory"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Product"
+    ListVOName="ProductsTypesLov1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Product"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="BillSaleDetails"
+    Entity="com.abdo.adf.storeshop.model.eo.BillSaleDetails"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="BillSaleDetails"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Price"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Price"
+    EntityUsage="BillSaleDetails"
+    AliasName="PRICE"/>
+  <ViewAttribute
+    Name="Discount"
+    PrecisionRule="true"
+    EntityAttrName="Discount"
+    EntityUsage="BillSaleDetails"
+    AliasName="DISCOUNT"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="BillSaleDetails"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="BillSaleDetails"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedDate"
+    EntityUsage="BillSaleDetails"
+    AliasName="LAST_UPDATED_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="BillSaleDetails"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="BillSaleId"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="BillSaleId"
+    EntityUsage="BillSaleDetails"
+    AliasName="BILL_SALE_ID"/>
+  <ViewAttribute
+    Name="Product"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Product"
+    EntityUsage="BillSaleDetails"
+    AliasName="PRODUCT"
+    LOVName="LOV_Product">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ProductCategory"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProductCategory"
+    EntityUsage="BillSaleDetails"
+    AliasName="PRODUCT_CATEGORY"
+    LOVName="LOV_ProductCategory">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Amount"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="BillSaleDetails"
+    AliasName="AMOUNT"/>
+</ViewObject>

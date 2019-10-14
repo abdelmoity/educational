@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+<f:loadBundle basename="com.abdo.adf.storeshop.view.bundle.viewController" var="bundle"/>
+  <af:panelBox text="#{bundle.OTHER_PAYMENTS}" id="pb1" showDisclosure="false" >
+    <f:facet name="toolbar">
+      <af:commandImageLink icon="/assets/img/add 32.png" id="cb1" action="add" text="#{bundle.ADD}" styleClass="btn btn-primary"/>
+    </f:facet>
+    <af:table value="#{bindings.OtherPaymentsView1.collectionModel}" var="row"
+              rows="#{bindings.OtherPaymentsView1.rangeSize}"
+              emptyText="#{bindings.OtherPaymentsView1.viewable ? bundle.NO_DATA_TO_DISPLAY : 'Access Denied.'}"
+              fetchSize="#{bindings.OtherPaymentsView1.rangeSize}" rowBandingInterval="0"
+              filterModel="#{bindings.OtherPaymentsView1Query.queryDescriptor}"
+              queryListener="#{bindings.OtherPaymentsView1Query.processQuery}" filterVisible="true" varStatus="vs"
+              selectedRowKeys="#{bindings.OtherPaymentsView1.collectionModel.selectedRow}"
+              selectionListener="#{bindings.OtherPaymentsView1.collectionModel.makeCurrent}" rowSelection="single"
+              id="t1" styleClass="AFStretchWidth table" inlineStyle="height:500px;">
+      <af:column sortProperty="#{bindings.OtherPaymentsView1.hints.Id.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.OtherPaymentsView1.hints.Id.label}" id="c1" width="30">
+        <af:outputText value="#{row.Id}" shortDesc="#{bindings.OtherPaymentsView1.hints.Id.tooltip}" id="ot1">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.OtherPaymentsView1.hints.Id.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.OtherPaymentsView1.hints.PaymentDate.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.OtherPaymentsView1.hints.PaymentDate.label}" id="c2">
+        <f:facet name="filter">
+          <af:inputDate value="#{vs.filterCriteria.PaymentDate}" id="id1">
+            <af:convertDateTime pattern="#{bindings.OtherPaymentsView1.hints.PaymentDate.format}"/>
+          </af:inputDate>
+        </f:facet>
+        <af:outputText value="#{row.PaymentDate}" shortDesc="#{bindings.OtherPaymentsView1.hints.PaymentDate.tooltip}"
+                       id="ot2">
+          <af:convertDateTime pattern="#{bindings.OtherPaymentsView1.hints.PaymentDate.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.OtherPaymentsView1.hints.PaymentType.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.OtherPaymentsView1.hints.PaymentType.label}" id="c3">
+        <af:selectOneChoice value="#{row.bindings.PaymentType.inputValue}" label="#{row.bindings.PaymentType.label}"
+                            required="#{bindings.OtherPaymentsView1.hints.PaymentType.mandatory}"
+                            shortDesc="#{bindings.OtherPaymentsView1.hints.PaymentType.tooltip}" readOnly="true"
+                            id="soc1">
+          <f:selectItems value="#{row.bindings.PaymentType.items}" id="si1"/>
+        </af:selectOneChoice>
+      </af:column>
+      <af:column sortProperty="#{bindings.OtherPaymentsView1.hints.Price.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.OtherPaymentsView1.hints.Price.label}" id="c4">
+        <af:outputText value="#{row.Price}" shortDesc="#{bindings.OtherPaymentsView1.hints.Price.tooltip}" id="ot3">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.OtherPaymentsView1.hints.Price.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column id="goEditId" width="25">
+        <af:commandImageLink icon="/assets/img/edit-24.png" id="cb2" action="edit"/>
+      </af:column>
+      
+      <af:column id="deleteId" width="25">
+        <af:commandImageLink id="deleteBtnId" shortDesc="delete" icon="/assets/img/delete-24.png">
+          <af:showPopupBehavior popupId="::p1" triggerType="click"/>
+        </af:commandImageLink>
+      </af:column>
+    </af:table>
+  </af:panelBox>
+  <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+    <af:dialog id="d1" title="#{bundle.DELETE_RECORDS}" type="okCancel"
+               dialogListener="#{baseBean.delPopUpListener}">
+    </af:dialog>
+  </af:popup>
+</ui:composition>

@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+<f:loadBundle basename="com.abdo.adf.storeshop.view.bundle.viewController" var="bundle"/>
+  <af:panelBox text="#{bundle.EDUCATIONAL_LEVEL_SUBJECT}" id="pb1" showDisclosure="false" >
+    <f:facet name="toolbar">
+      <af:group id="g1">
+        <af:commandButton actionListener="#{bindings.CreateInsert.execute}" text="#{bundle.ADD}"
+                           id="cb1"/>
+        <af:commandButton action="#{baseBean.save}" text="#{bundle.SAVE}" id="cb2"/>
+      </af:group>
+    </f:facet>
+    <af:panelFormLayout id="pfl1">
+      <af:panelLabelAndMessage label="#{bindings.Id.hints.label}" id="plam1">
+        <af:outputText value="#{bindings.Id.inputValue}" shortDesc="#{bindings.Id.hints.tooltip}" id="ot1">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+        </af:outputText>
+      </af:panelLabelAndMessage>
+      <af:panelLabelAndMessage label="#{bindings.Name.hints.label}" id="plam2">
+        <af:outputText value="#{bindings.Name.inputValue}" shortDesc="#{bindings.Name.hints.tooltip}" id="ot2"/>
+      </af:panelLabelAndMessage>
+      <f:facet name="footer">
+        <af:panelGroupLayout layout="horizontal" id="pgl1">
+          <f:facet name="separator">
+            <af:spacer width="10" height="1" id="s1"/>
+          </f:facet>
+          <af:commandButton actionListener="#{bindings.First.execute}" text="First"
+                            disabled="#{!bindings.First.enabled}" partialSubmit="true" id="cb3"/>
+          <af:commandButton actionListener="#{bindings.Previous.execute}" text="Previous"
+                            disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="cb4"/>
+          <af:commandButton actionListener="#{bindings.Next.execute}" text="Next" disabled="#{!bindings.Next.enabled}"
+                            partialSubmit="true" id="cb5"/>
+          <af:commandButton actionListener="#{bindings.Last.execute}" text="Last" disabled="#{!bindings.Last.enabled}"
+                            partialSubmit="true" id="cb6"/>
+        </af:panelGroupLayout>
+      </f:facet>
+    </af:panelFormLayout>
+    <af:table value="#{bindings.EducationalSubjectView3.collectionModel}" var="row" styleClass="AFStretchWidth"
+              rows="#{bindings.EducationalSubjectView3.rangeSize}" inlineStyle="height:500px;"
+              emptyText="#{bindings.EducationalSubjectView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+              fetchSize="#{bindings.EducationalSubjectView3.rangeSize}" rowBandingInterval="0"
+              filterModel="#{bindings.EducationalSubjectView3Query.queryDescriptor}"
+              queryListener="#{bindings.EducationalSubjectView3Query.processQuery}" filterVisible="true" varStatus="vs"
+              selectedRowKeys="#{bindings.EducationalSubjectView3.collectionModel.selectedRow}"
+              selectionListener="#{bindings.EducationalSubjectView3.collectionModel.makeCurrent}" rowSelection="single"
+              id="t1" partialTriggers="::cb1">
+      <af:column sortProperty="#{bindings.EducationalSubjectView3.hints.Id.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.EducationalSubjectView3.hints.Id.label}" id="c1" width="40">
+        <af:inputText value="#{row.bindings.Id.inputValue}" label="#{bindings.EducationalSubjectView3.hints.Id.label}"
+                      required="#{bindings.EducationalSubjectView3.hints.Id.mandatory}" disabled="true"
+                      columns="#{bindings.EducationalSubjectView3.hints.Id.displayWidth}" 
+                      maximumLength="#{bindings.EducationalSubjectView3.hints.Id.precision}"
+                      shortDesc="#{bindings.EducationalSubjectView3.hints.Id.tooltip}" id="it1">
+          <f:validator binding="#{row.bindings.Id.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.EducationalSubjectView3.hints.Id.format}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.EducationalSubjectView3.hints.EducationalLevel.name}" filterable="true"
+                 sortable="true" headerText="#{bindings.EducationalSubjectView3.hints.EducationalLevel.label}" id="c2">
+        <af:selectOneChoice value="#{row.bindings.EducationalLevel.inputValue}"
+                            label="#{row.bindings.EducationalLevel.label}" disabled="true"
+                            required="#{bindings.EducationalSubjectView3.hints.EducationalLevel.mandatory}"
+                            shortDesc="#{bindings.EducationalSubjectView3.hints.EducationalLevel.tooltip}" id="soc1">
+          <f:selectItems value="#{row.bindings.EducationalLevel.items}" id="si1"/>
+        </af:selectOneChoice>
+      </af:column>
+      <af:column sortProperty="#{bindings.EducationalSubjectView3.hints.Subject.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.EducationalSubjectView3.hints.Subject.label}" id="c3">
+        <af:selectOneChoice value="#{row.bindings.Subject.inputValue}" label="#{row.bindings.Subject.label}"
+                            required="#{bindings.EducationalSubjectView3.hints.Subject.mandatory}"
+                            shortDesc="#{bindings.EducationalSubjectView3.hints.Subject.tooltip}" id="soc2">
+          <f:selectItems value="#{row.bindings.Subject.items}" id="si2"/>
+        </af:selectOneChoice>
+      </af:column>
+      <af:column sortProperty="#{bindings.EducationalSubjectView3.hints.Price.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.EducationalSubjectView3.hints.Price.label}" id="c4" width="40">
+        <af:inputText value="#{row.bindings.Price.inputValue}"
+                      label="#{bindings.EducationalSubjectView3.hints.Price.label}"
+                      required="#{bindings.EducationalSubjectView3.hints.Price.mandatory}"
+                      columns="#{bindings.EducationalSubjectView3.hints.Price.displayWidth}"
+                      maximumLength="#{bindings.EducationalSubjectView3.hints.Price.precision}"
+                      shortDesc="#{bindings.EducationalSubjectView3.hints.Price.tooltip}" id="it2">
+          <f:validator binding="#{row.bindings.Price.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.EducationalSubjectView3.hints.Price.format}"/>
+        </af:inputText>
+      </af:column>
+      <af:column id="deleteId" width="50">
+        <af:commandImageLink id="deleteBtnId" shortDesc="delete" icon="/assets/img/delete-24.png">
+          <af:showPopupBehavior popupId="::p1" triggerType="click"/>
+        </af:commandImageLink>
+      </af:column>
+    </af:table>
+  </af:panelBox>
+  <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+    <af:dialog id="d1" title="#{bundle.DELETE_RECORDS}" type="okCancel"
+               dialogListener="#{baseBean.delPopUpListener}">
+    </af:dialog>
+  </af:popup>
+</ui:composition>

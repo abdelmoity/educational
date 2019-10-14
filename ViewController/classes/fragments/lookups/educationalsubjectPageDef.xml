@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="educationalsubjectPageDef"
+                Package="fragments.lookups">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EducationalLevelView1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="EducationalLevelView1Iterator" ChangeEventPolicy="ppr"/>
+    <iterator Binds="EducationalSubjectView3" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="EducationalSubjectView3Iterator" ChangeEventPolicy="ppr"/>
+    <searchRegion Binds="EducationalSubjectView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EducationalSubjectView3Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EducationalLevelView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EducationalLevelView1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="EducationalLevelView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="EducationalLevelView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="EducationalLevelView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="EducationalLevelView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="EducationalSubjectView3Iterator" id="EducationalSubjectView3">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.EducationalSubjectView" Name="EducationalSubjectView30">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="EducationalLevel"/>
+          <Item Value="Subject"/>
+          <Item Value="Price"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" InstanceName="StoreShopModuleDataControl" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action IterBinding="EducationalSubjectView3Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="EducationalSubjectView3Iterator" id="Delete"
+            InstanceName="StoreShopModuleDataControl.EducationalSubjectView3" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

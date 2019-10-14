@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+<f:loadBundle basename="com.abdo.adf.storeshop.view.bundle.viewController" var="bundle"/>
+  <af:panelBox text="#{bundle.ALL_PRODUCTS_REPORT}" id="pb1" showDisclosure="false" >
+  <af:panelFormLayout id="pfl1" rows="1">
+    <af:selectOneChoice value="#{bindings.customer.inputValue}" label="#{bindings.customer.label}"
+                        required="#{bindings.customer.hints.mandatory}" shortDesc="#{bindings.customer.hints.tooltip}"
+                        id="soc1">
+      <f:selectItems value="#{bindings.customer.items}" id="si1"/>
+    </af:selectOneChoice>
+    <af:inputDate value="#{bindings.fromDate.inputValue}" label="#{bindings.fromDate.hints.label}"
+                  required="#{bindings.fromDate.hints.mandatory}" columns="#{bindings.fromDate.hints.displayWidth}"
+                  shortDesc="#{bindings.fromDate.hints.tooltip}" id="id1">
+      <f:validator binding="#{bindings.fromDate.validator}"/>
+      <af:convertDateTime pattern="#{bindings.fromDate.format}"/>
+    </af:inputDate>
+    <af:inputDate value="#{bindings.toDate.inputValue}" label="#{bindings.toDate.hints.label}"
+                  required="#{bindings.toDate.hints.mandatory}" columns="#{bindings.toDate.hints.displayWidth}"
+                  shortDesc="#{bindings.toDate.hints.tooltip}" id="id2">
+      <f:validator binding="#{bindings.toDate.validator}"/>
+      <af:convertDateTime pattern="#{bindings.toDate.format}"/>
+    </af:inputDate>
+    <af:commandButton actionListener="#{bindings.ExecuteWithParams.execute}" text="ExecuteWithParams"
+                      disabled="#{!bindings.ExecuteWithParams.enabled}" id="cb1"/>
+</af:panelFormLayout>
+    <af:table value="#{bindings.billSalesByPeriodCustomer1.collectionModel}" var="row"
+              rows="#{bindings.billSalesByPeriodCustomer1.rangeSize}" styleClass="AFStretchWidth" inlineStyle="height:500px;"
+              emptyText="#{bindings.billSalesByPeriodCustomer1.viewable ? bundle.NO_DATA_TO_DISPLAY : 'Access Denied.'}"
+              fetchSize="#{bindings.billSalesByPeriodCustomer1.rangeSize}" rowBandingInterval="0"
+              selectedRowKeys="#{bindings.billSalesByPeriodCustomer1.collectionModel.selectedRow}"
+              selectionListener="#{bindings.billSalesByPeriodCustomer1.collectionModel.makeCurrent}"
+              rowSelection="single" id="t1" partialTriggers="::cb1">
+      <af:column sortProperty="#{bindings.billSalesByPeriodCustomer1.hints.Id.name}" sortable="true"
+                 headerText="#{bindings.billSalesByPeriodCustomer1.hints.Id.label}" id="c1">
+        <af:outputText value="#{row.Id}" shortDesc="#{bindings.billSalesByPeriodCustomer1.hints.Id.tooltip}" id="ot1">
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.billSalesByPeriodCustomer1.hints.Id.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.billSalesByPeriodCustomer1.hints.SaleDate.name}" sortable="true"
+                 headerText="#{bindings.billSalesByPeriodCustomer1.hints.SaleDate.label}" id="c2">
+        <af:outputText value="#{row.SaleDate}" shortDesc="#{bindings.billSalesByPeriodCustomer1.hints.SaleDate.tooltip}"
+                       id="ot2">
+          <af:convertDateTime pattern="#{bindings.billSalesByPeriodCustomer1.hints.SaleDate.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.billSalesByPeriodCustomer1.hints.Customer.name}" sortable="true"
+                 headerText="#{bindings.billSalesByPeriodCustomer1.hints.Customer.label}" id="c3">
+        <af:outputText value="#{row.Customer}" shortDesc="#{bindings.billSalesByPeriodCustomer1.hints.Customer.tooltip}"
+                       id="ot3">
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.billSalesByPeriodCustomer1.hints.Customer.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.billSalesByPeriodCustomer1.hints.Name.name}" sortable="true"
+                 headerText="#{bindings.billSalesByPeriodCustomer1.hints.Name.label}" id="c4">
+        <af:outputText value="#{row.Name}" shortDesc="#{bindings.billSalesByPeriodCustomer1.hints.Name.tooltip}"
+                       id="ot4"/>
+      </af:column>
+      <af:column sortProperty="#{bindings.billSalesByPeriodCustomer1.hints.TotalPrice.name}" sortable="true"
+                 headerText="#{bindings.billSalesByPeriodCustomer1.hints.TotalPrice.label}" id="c5">
+        <af:outputText value="#{row.TotalPrice}"
+                       shortDesc="#{bindings.billSalesByPeriodCustomer1.hints.TotalPrice.tooltip}" id="ot5">
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.billSalesByPeriodCustomer1.hints.TotalPrice.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.billSalesByPeriodCustomer1.hints.Discount.name}" sortable="true"
+                 headerText="#{bindings.billSalesByPeriodCustomer1.hints.Discount.label}" id="c6">
+        <af:outputText value="#{row.Discount}" shortDesc="#{bindings.billSalesByPeriodCustomer1.hints.Discount.tooltip}"
+                       id="ot6">
+          <af:convertNumber groupingUsed="false"
+                            pattern="#{bindings.billSalesByPeriodCustomer1.hints.Discount.format}"/>
+        </af:outputText>
+      </af:column>
+    </af:table>
+  </af:panelBox>
+  
+</ui:composition>

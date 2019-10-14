@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PaymentsTypesView"
+  Version="11.1.2.64.36"
+  SelectList="PaymentsTypes.ID, 
+       PaymentsTypes.NAME, 
+       PaymentsTypes.CREATED_BY, 
+       PaymentsTypes.CREATED_DATE, 
+       PaymentsTypes.LAST_UPDATED_BY, 
+       PaymentsTypes.LAST_UPDATED_DATE"
+  FromList="PAYMENTS_TYPES PaymentsTypes"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="PaymentsTypes"
+    Entity="com.abdo.adf.storeshop.model.eo.PaymentsTypes"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="PaymentsTypes"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="PaymentsTypes"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="PaymentsTypes"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="PaymentsTypes"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="PaymentsTypes"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedDate"
+    EntityUsage="PaymentsTypes"
+    AliasName="LAST_UPDATED_DATE"/>
+  <ViewLinkAccessor
+    Name="OtherPaymentsView"
+    ViewLink="com.abdo.adf.storeshop.model.vo.OtherPaymentsR03Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

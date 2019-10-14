@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TestsView"
+  Version="11.1.2.64.36"
+  SelectList="Tests.ID, 
+       Tests.TEST_NAME, 
+       Tests.GROUP_ID, 
+       Tests.TEST_DATE, 
+       Tests.MATERIAL, 
+       Tests.NOTES, 
+       Tests.DEGREE"
+  FromList="TESTS Tests"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Tests"
+    Entity="com.abdo.adf.storeshop.model.eo.Tests"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="Tests"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="TestName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TestName"
+    EntityUsage="Tests"
+    AliasName="TEST_NAME"/>
+  <ViewAttribute
+    Name="GroupId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GroupId"
+    EntityUsage="Tests"
+    AliasName="GROUP_ID"/>
+  <ViewAttribute
+    Name="TestDate"
+    PrecisionRule="true"
+    EntityAttrName="TestDate"
+    EntityUsage="Tests"
+    AliasName="TEST_DATE"/>
+  <ViewAttribute
+    Name="Material"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="Material"
+    EntityUsage="Tests"
+    AliasName="MATERIAL"/>
+  <ViewAttribute
+    Name="Notes"
+    PrecisionRule="true"
+    EntityAttrName="Notes"
+    EntityUsage="Tests"
+    AliasName="NOTES"/>
+  <ViewAttribute
+    Name="Degree"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Degree"
+    EntityUsage="Tests"
+    AliasName="DEGREE"/>
+  <ViewLinkAccessor
+    Name="TestStudentView"
+    ViewLink="com.abdo.adf.storeshop.model.vo.TestStudentFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.2.64.36" id="educationallevelsPageDef"
+                Package="fragments.educational">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="EducationalLevelView1" RangeSize="25" DataControl="StoreShopModuleDataControl"
+              id="EducationalLevelView1Iterator"/>
+    <searchRegion Binds="EducationalLevelView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EducationalLevelView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="EducationalLevelView1Iterator" id="EducationalLevelView1">
+      <nodeDefinition DefName="com.abdo.adf.storeshop.model.vo.EducationalLevelView" Name="EducationalLevelView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="EducationalLevelView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="StoreShopModuleDataControl"/>
+    <action IterBinding="EducationalLevelView1Iterator" id="Delete"
+            InstanceName="StoreShopModuleDataControl.EducationalLevelView1" DataControl="StoreShopModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>
